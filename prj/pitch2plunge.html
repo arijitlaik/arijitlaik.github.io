@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <form name="dip">
+        Dip of the Plane:
+        <input type="number" name="dipamt">
+        <br> Strike of the plane
+        <input type="number" name="strike">
+        <br> Pitch / Rake of the line on the Plane
+        <input type="number" name="lpitch">
+    </form>
+
+    <p>Click GO! to get the plunge from the pitch</p>
+
+    <button onclick="myFunction()">GO</button>
+
+    <p>The Plunging is <b id="plungeamt"></b>&deg; towards <b id="plungedir"></b>&deg;</p>
+
+    <script>
+        // Converts from degrees to radians.
+        torad = function (degrees) {  
+            return degrees * Math.PI / 180;
+        }; 
+        // Converts from radians to degrees.
+        todeg = function (radians) {  
+            return radians * 180 / Math.PI;
+        };
+
+        function myFunction() {
+            var da = torad(document.forms.dip.dipamt.value);
+            var st = document.forms.dip.strike.value;
+            var pp = torad(document.forms.dip.lpitch.value);
+            var pl = todeg(Math.asin(Math.sin(da) * Math.sin(pp)));
+            var pd = +st + todeg(Math.atan(Math.cos(da) * Math.tan(pp)))
+            document.getElementById("plungeamt").innerHTML = pl;
+            document.getElementById("plungedir").innerHTML = pd;
+            console.log(" " + da + pp + pl + pd);
+        }
+    </script>
+
+</body>
+
+</html>
+<!--
+pitch=pp
+dip=da
+Plunge direction= strike + todeg(Math.atan( Math.cos(da)*Math.tan(pp) ))
+Plunge amount =todeg( Math.asin( Math.sin(da)*Math.sin(pp) ))
