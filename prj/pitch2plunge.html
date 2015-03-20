@@ -3,13 +3,13 @@
 
 <body>
 
-    <form name="dip">
+    <form name="Pi2Pl">
         Dip of the Plane:
-        <input type="number" name="dipamt">
+        <input type="number" id="dipamt">
         <br> Strike of the plane
-        <input type="number" name="strike">
+        <input type="number" id="strike">
         <br> Pitch / Rake of the line on the Plane
-        <input type="number" name="lpitch">
+        <input type="number" id="lpitch">
     </form>
 
     <p>Click GO! to get the plunge from the pitch</p>
@@ -29,9 +29,9 @@
         };
 
         function myFunction() {
-            var da = torad(document.forms.dip.dipamt.value);
-            var st = document.forms.dip.strike.value;
-            var pp = torad(document.forms.dip.lpitch.value);
+            var da = torad(document.getElementById('dipamt').value);
+            var st = document.getElementById('strike').value;
+            var pp = torad(document.getElementById('lpitch').value);
             var pl = todeg(Math.asin(Math.sin(da) * Math.sin(pp)));
             var pd = +st + todeg(Math.atan(Math.cos(da) * Math.tan(pp)))
             document.getElementById("plungeamt").innerHTML = pl;

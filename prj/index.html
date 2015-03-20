@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Simple Pitch to Plunge Convertor</title>
+    <meta name="description" content="converts the plitch of a plane to its plunge">
+    <meta name="author" content="Arijit laik">
+
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600,900" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+
+<body>
+
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+        <div class="row">
+            <div class="twelve columns">
+                <hr/>
+                <h2>This is <b>Pi2Pl</b></h2>
+                <h4>a simple pitch to plunge convertor</h4>
+                <hr/>
+            </div>
+        </div>
+        <form name="Pi2Pl">
+            <h6>Enter the following data and press go to get the plunge and its direction all w.r.t North</h6>
+            <div class="row">
+                <div class="four columns">
+                    <label>Dip of the Plane:</label>
+                    <input type="number" id="dipamt">
+                    <deg>&deg</deg>;
+                </div>
+                <div class="four columns">
+                    <label>Strike of the plane</label>
+                    <input type="number" id="strike">
+                    <deg>&deg</deg>;
+                </div>
+                <div class="four columns">
+                    <label>Pitch of the line on the Plane</label>
+                    <input type="number" id="lpitch">
+                    <deg>&deg</deg>;
+                </div>
+            </div>
+        </form>
+        <button onclick="doPi2PL()" class="button-primary">GO</button>
+        <div class="row">
+            <div class="six columns">
+                <h5>Plunge amount    <b><an id="plungeamt"></an>&deg</b></h5>
+            </div>
+            <div class="six columns">
+                <h5>Plunge direction <b><an id="plungedir"></an>&deg</b></h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve columns">
+                <button onclick="roundoff()" class="button-primary">round off values</button>
+            </div>
+        </div>
+        <hr/>
+    </div>
+    <script>
+        // Converts from degrees to radians.
+        torad = function (degrees) {
+            return degrees * Math.PI / 180;
+        };
+        // Converts from radians to degrees.
+        todeg = function (radians) {
+            return radians * 180 / Math.PI;
+        };
+
+        function doPi2PL() {
+            var da = torad(document.getElementById('dipamt').value);
+            var st = document.getElementById('strike').value;
+            var pp = torad(document.getElementById('lpitch').value);
+            var pl = todeg(Math.asin(Math.sin(da) * Math.sin(pp)));
+            var pd = +st + todeg(Math.atan(Math.cos(da) * Math.tan(pp)))
+            document.getElementById("plungeamt").innerHTML = pl;
+            document.getElementById("plungedir").innerHTML = pd;
+        }
+
+        function roundoff() {
+            document.getElementById("plungeamt").innerHTML = Math.round(+document.getElementById("plungeamt").innerHTML);
+            document.getElementById("plungedir").innerHTML = Math.round(+document.getElementById("plungedir").innerHTML);
+
+        }
+    </script>
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>
