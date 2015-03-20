@@ -66,10 +66,10 @@
             <button onclick="doPi2PL()" class="button-primary">GO</button>
             <div class="row">
                 <div class="six columns">
-                    <h5>Plunge amount: <h><input id="plungeamt"></input>&deg;</h></h5>
+                    <h5>Plunge amount: <h><an id="plungeamt"></an>&deg;</h></h5>
                 </div>
                 <div class="six columns">
-                    <h5>Plunge direction: <h><input id="plungedir"></input>&deg;</h></h5>
+                    <h5>Plunge direction: <h><an id="plungedir"></an>&deg;</h></h5>
                 </div>
             </div>
             <button onclick="roundoff()" class="button-primary">round off values</button>
@@ -103,13 +103,13 @@
             var pp = torad(document.getElementById('lpitch').value);
             var pl = todeg(Math.asin(Math.sin(da) * Math.sin(pp)));
             var pd = +st + todeg(Math.atan(Math.cos(da) * Math.tan(pp)))
-            document.getElementById("plungeamt").value = pl;
-            document.getElementById("plungedir").value = pd;
+            document.getElementById("plungeamt").innerHTML = pl;
+            document.getElementById("plungedir").innerHTML = pd;
         }
 
         function roundoff() {
-            document.getElementById("plungeamt").value = Math.round(document.getElementById("plungeamt").value);
-            document.getElementById("plungedir").value = Math.round(document.getElementById("plungedir").value);
+            document.getElementById("plungeamt").innerHTML = Math.round(+document.getElementById("plungeamt").innerHTML);
+            document.getElementById("plungedir").innerHTML = Math.round(+document.getElementById("plungedir").innerHTML);
 
         }
     </script>
