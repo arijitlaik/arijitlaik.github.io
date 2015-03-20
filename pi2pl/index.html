@@ -42,45 +42,48 @@
                 <hr/>
             </div>
         </div>
-        <form name="Pi2Pl">
-            <h6>Enter the following data and press go to get the plunge and its direction [ all w.r.t North ]</h6>
+        <div class="box">
+            <form name="Pi2Pl">
+                <h6>Enter the following data and press go to get the plunge and its direction [ all w.r.t North ]</h6>
+                <div class="row">
+                    <div class="four columns">
+                        <label>Dip of the Plane:</label>
+                        <input type="number" id="dipamt">
+                        <deg>&deg</deg>;
+                    </div>
+                    <div class="four columns">
+                        <label>Strike of the plane</label>
+                        <input type="number" id="strike">
+                        <deg>&deg</deg>;
+                    </div>
+                    <div class="four columns">
+                        <label>Pitch of the line on the Plane</label>
+                        <input type="number" id="lpitch">
+                        <deg>&deg</deg>;
+                    </div>
+                </div>
+            </form>
+            <button onclick="doPi2PL()" class="button-primary">GO</button>
             <div class="row">
-                <div class="four columns">
-                    <label>Dip of the Plane:</label>
-                    <input type="number" id="dipamt">
-                    <deg>&deg</deg>;
+                <div class="six columns">
+                    <h5>Plunge amount    <h><an id="plungeamt"></an>&deg</h></h5>
                 </div>
-                <div class="four columns">
-                    <label>Strike of the plane</label>
-                    <input type="number" id="strike">
-                    <deg>&deg</deg>;
-                </div>
-                <div class="four columns">
-                    <label>Pitch of the line on the Plane</label>
-                    <input type="number" id="lpitch">
-                    <deg>&deg</deg>;
+                <div class="six columns">
+                    <h5>Plunge direction <h><an id="plungedir"></an>&deg</h></h5>
                 </div>
             </div>
-        </form>
-        <button onclick="doPi2PL()" class="button-primary">GO</button>
-        <div class="row">
-            <div class="six columns">
-                <h5>Plunge amount    <h><an id="plungeamt"></an>&deg</h></h5>
-            </div>
-            <div class="six columns">
-                <h5>Plunge direction <h><an id="plungedir"></an>&deg</h></h5>
-            </div>
-        </div>
-        <div class="row">
-            <div class="twelve columns">
-                <button onclick="roundoff()" class="button-primary">round off values</button>
+            <div class="row">
+                <div class="twelve columns">
+                    <button onclick="roundoff()" class="button-primary">round off values</button>
+                </div>
             </div>
         </div>
         <hr/>
         <footer>
             <h3>coded on <a href="http://www.w3.org/html/logo/" target="_blank"><img src="images/htmljscss.svg" style="height:2em"></a> using <b><a href="http://getskeleton.com/" target="_blank">Skeleton</a></b></h3>
             <h5>Source code on <a href="https://github.com/arijitlaik/arijitlaik.github.io/tree/master/pi2pl" target="_blank"><b>Github</b></a></h5>
-            <a href="https://www.gnu.org/licenses/lgpl.html" target="_blank"><img src="https://www.gnu.org/graphics/lgplv3-147x51.png"></a>
+            <a href="https://www.gnu.org/licenses/lgpl.html" target="_blank"><img src="https://www.gnu.org/graphics/lgplv3-147x51.png">
+            </a>
         </footer>
     </div>
     <script>
