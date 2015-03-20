@@ -586,3 +586,10 @@ h {
     font-size: 1.4em;
     font-weight: 900;
 }
+
+footer {
+    text-align: center;
+}
+footer a{
+    text-decoration: none;
+}
