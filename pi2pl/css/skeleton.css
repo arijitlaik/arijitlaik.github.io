@@ -574,14 +574,15 @@ there.
 /* Customizations
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-b,
-strong {
-    color: #1EAEDB;
-    font-size: 2em;
-    font-weight: 900;
-}
+
 
 deg {
     font-size: 2em;
     font-weight: bolder;
+}
+
+h {
+    color: #1EAEDB;
+    font-size: 1.4em;
+    font-weight: 900;
 }
