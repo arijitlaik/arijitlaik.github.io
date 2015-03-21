@@ -581,9 +581,9 @@ deg {
     font-weight: bolder;
 }
 
-h {
+h,input {
     color: #1EAEDB;
-    font-size: 1.4em;
+
     font-weight: 900;
 }
 
