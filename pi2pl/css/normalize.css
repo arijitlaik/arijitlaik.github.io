@@ -193,8 +193,6 @@ img {
 svg:not(:root) {
   overflow: hidden;
     margin: auto;
-    border: 2px solid #222;
-    padding: 3rem;
 }
 
 /* Grouping content

@@ -571,6 +571,7 @@ there.
 /* Larger than Desktop HD */
 
 @media (min-width: 1200px) {}
+
 /* Customizations
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -598,4 +599,10 @@ footer a{
 .box {
     padding: .5em;
     box-shadow: 0px 0px 5px #a0a0a0;
+}
+
+svg {
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    padding: 3rem;
 }
