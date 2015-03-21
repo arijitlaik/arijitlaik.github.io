@@ -590,6 +590,7 @@ h,input {
 
 footer {
     text-align: center;
+    font-size:
 }
 footer a{
     text-decoration: none;
@@ -599,6 +600,7 @@ footer a{
 .box {
     padding: .5em;
     box-shadow: 0px 0px 5px #a0a0a0;
+    text-align: center;
 }
 
 svg {
@@ -606,3 +608,5 @@ svg {
     border: 1px solid #bbb;
     padding: 3rem;
 }
+.button{
+background-color: white;}
