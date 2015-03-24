@@ -1,0 +1,61 @@
+// generated JSON in http://www.objgen.com/json
+questions[0]
+  property = specificGravity
+  questionText = What is the Specific Gravity?
+  answers[0]
+    id n= 1
+    answer = low
+    questionText = 
+    subAns[]  
+  answers[1]
+    id n= 2
+    answer = medium
+    questionText = 
+    subAns[]
+  
+  answers[2]
+    id n= 3
+    answer = high
+    questionText = 
+    subAns[]
+questions[1]
+  property = color
+  questionText = What is the color?
+  answers[0]
+    id n= 1
+    answer = red
+    questionText = What can be the actual color?
+    subAns[0] 
+      id n= 11
+      answer = greenish red
+    subAns[1] 
+      id n= 12
+      answer = blackish red  
+  
+  answers[1]
+    id n= 2
+    answer = black
+    questionText = What can be the actual color?
+    subAns[0] 
+      id n= 21
+      answer = greenish black
+    subAns[1] 
+      id n= 22
+      answer = grayish black 
+    subAns[2] 
+      id n= 23
+      answer = stone black 
+
+  answers[2]
+    id n= 3
+    answer = green
+    questionText = What can be the actual color?
+    subAns[0] 
+      id n= 31
+      answer = blacky green
+    subAns[1] 
+      id n= 32
+      answer = blueish green 
+    subAns[2] 
+      id n= 33
+      answer = redish green 
