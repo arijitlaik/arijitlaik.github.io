@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>untitled</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+
+</head>
+
+<body>
+	<p>SEM1 SGPA MJR <input id="sem1MJR" type="number" class="validate"> SGPA ED <input id="sem1ED" type="number" class="validate"></input></p>
+	<p>SEM2 SGPA MJR <input id="sem2MJR" type="number" class="validate"> SGPA ED <input id="sem2ED" type="number" class="validate"></input></p>
+	<p>SEM3 SGPA MJR <input id="sem3MJR" type="number" class="validate"> SGPA ED <input id="sem3ED" type="number" class="validate"></input></p>
+	<p>SEM4 SGPA MJR <input id="sem4MJR" type="number" class="validate"> SGPA ED <input id="sem4ED" type="number" class="validate"></input></p>
+	<p>SEM5 SGPA MJR <input id="sem5MJR" type="number" class="validate"> SGPA ED <input id="sem5ED" type="number" class="validate" value="0"></input></p>
+	<p>SEM6 SGPA MJR <input id="sem6MJR" type="number" class="validate"> SGPA ED <input id="sem6ED" type="number" class="validate" value="0"></input></p>
+    <button onclick="calculateCGPA()">Calculate</button>
+    <p id="CGPA"></p>
+<script src="pumjrcgpa.js"></script>
+</body>
+
+</html>
