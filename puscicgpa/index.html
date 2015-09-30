@@ -80,7 +80,7 @@
 				<div class="input-field col s12 m4">
 					<i class="mdi-content-create prefix"></i>
 					<input id="sem4MJR" type="number" class="validate">
-					<label for="sem4MJR">SGPA MAJOR Subject</label>
+					<label for="semsssD4MJR">SGPA MAJOR Subject</label>
 				</div>
 				<div class="input-field col s12 m4">
 					<i class="mdi-content-create prefix"></i>
@@ -130,15 +130,15 @@
 			<div class="col s12 m8">
 				<div class="card-panel teal lighten-3" id="CGPA">
 					<h5>CGPA</h5>
-					<div  class="card-panel yellow lighten-2">
+					<div  class="row card-panel yellow lighten-2">
 						<i class="mdi-action-bookmark-outline"></i> Major:
 						<b id="cgpa_mjr" class="btn right"></b>
 					</div>
-					<div class="card-panel yellow lighten-2">
-						<i class="mdi-action-bookmark-outline"></i> Extra-Departmental Subjects
+					<div class="row card-panel yellow lighten-2">
+						<i class="mdi-action-bookmark-outline"></i> ED Subjects
 						<b id="cgpa_eds" class="btn right"></b>
 					</div>
-					<div class="card-panel yellow lighten-2">
+					<div class="row card-panel yellow lighten-2">
 						<i class="mdi-action-bookmark-outline"></i> Overall
 						<b id="cgpa" class="btn right"></b>
 					</div>
@@ -182,8 +182,7 @@
 
 
 
-			$("input").attr({
-				max: 10,
+			$("input").attr({				max: 10,
 				min: 0,
 				step: 0.01
 			});
