@@ -1,0 +1,38 @@
+h1,
+h4 {
+	font-weight: normal;
+}
+figcaption {
+	text-align: left;
+	font-size: .6em;
+}
+figure {
+	border: 2px solid #222;
+
+	padding: .6em;
+}
+
+footer {
+	text-align: center;
+}
+.findme >a {
+	text-decoration: none;
+	border: 2px solid #222;
+	text-align: center;
+	padding-left: 1em;
+	padding-right: 1em;
+	line-height: 3em;
+	font-family: 'Latin Modern Roman Dunhill'
+}
+.findme {
+	text-align: center;
+}
+ul {
+	list-style: disc;
+}
+.me{
+	border: 0px soild;
+	border-radius: 100%;
+
+	-webkit-filter: grayscale(100%);
+}
