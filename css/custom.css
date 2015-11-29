@@ -8,14 +8,12 @@ figcaption {
 }
 figure {
 	border: 2px solid #222;
-
 	padding: .6em;
 }
-
 footer {
 	text-align: center;
 }
-.findme >a {
+#findme >a {
 	text-decoration: none;
 	border: 2px solid #222;
 	text-align: center;
@@ -24,15 +22,37 @@ footer {
 	line-height: 3em;
 	font-family: 'Latin Modern Roman Dunhill'
 }
-.findme {
+#findme {
 	text-align: center;
 }
 ul {
 	list-style: disc;
 }
-.me{
+.me {
 	border: 0px soild;
 	border-radius: 100%;
-
 	-webkit-filter: grayscale(100%);
+}
+nav {
+	line-height: 2em;
+	font-family: 'Latin Modern Roman Dunhill';
+	text-align: center;
+	border-bottom: 1.3px solid #222;
+	margin-top: .4em;
+	padding: .3em;
+}
+nav >a {
+	text-decoration: none;
+	-webkit-transition: all .6s;
+	transition: all .6s;
+	border-left: 1.2px solid #333333;
+	border-right: 1.2px solid #333333;
+	padding-left: .2em;
+	padding-right: .2em;
+}
+nav >a:hover {
+	text-decoration: none;
+	color: #fff;
+	background: #222;
+
 }
