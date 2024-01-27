@@ -1,133 +1,174 @@
-/* Base Font Size */
-html, p, li {
-    font-size: 18px;
+/* Override MDL Typography Subclasses */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  font-family: "Josefin Sans", sans-serif !important;
 }
-.mdl-navigation__link {
-    font-size: 20px;
-}
-body{
-    background-color: #e0fde0d2;
 
+.mdl-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.mdl-layout__drawer{
-    width: fit-content;
-    background-color: #cff1cf;
+
+.mdl-navigation__link {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.mdl-navigation__link button {
+  margin-bottom: 8px;
+}
+/* Base Font Size */
+html,
+p,
+li {
+  font-size: 18px;
+}
+/* .mdl-navigation__link {
+    font-size: 16px;
+} */
+
+.mdl-mini-footer--social-btn,
+.mdl-mini-footer__social-btn {
+  background-color: inherit;
+  color:#384427;
+  font-weight: bolder;
+  font-size: x-large;
+}
+body {
+  background-color: #e0fde0;
+}
+
+.mdl-layout--fixed-drawer.is-upgraded:not(.is-small-screen)>.mdl-layout__header {
+    margin-left: 160px;
+    width: calc(100% - 160px)
+}
+
+.mdl-layout__drawer {
+  width: 160px;
+  background-color: #eaffea;
 }
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
-
-    background-color: #669e69;
-    color: #ffffff;
-    transform: translateY(-4px);
+  background-color: #cef8ce;
+  /* color: #ffffff; */
+  /* transform: translateY(-4px); */
 }
 /* Reset font size for specific elements */
 .mdl-card__supporting-text {
-    font-size: inherit;
+  font-size: inherit;
 }
 
 /* Responsive Font Size Adjustment */
 @media screen and (max-width: 600px) {
-    html {
-        font-size: 14px;
-    }
+  html {
+    font-size: 14px;
+  }
 }
 
 /* General Styles */
 .mdl-card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    background-color: #efffef;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s ease-out;
-    transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  background-color: #efffef;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease-out;
+  transform: translateY(0);
 }
 
 .mdl-card:hover {
-    background-color: #cff7d1;
-    transform: translateY(-4px);
+  background-color: #cff7d1;
+  transform: translateY(-4px);
 }
 
 .mdl-card__title {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    background-color: #81C784;
-    color: #ffffff;
-    padding: 16px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  /* font-size: 24px; */
+  background-color: #81c784;
+  color: #ffffff;
+  padding: 16px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .mdl-card__supporting-text {
-    padding: 16px;
-    line-height: 1.6;
-    color: #37474f;
+  padding: 16px;
+  line-height: 1.6;
+  color: #37474f;
 }
 
 /* Header Styles */
 .mdl-layout__header {
-    background-color: #81C784;
-    color: #ffffff;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #81c784;
+  color: #ffffff;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .mdl-layout-title a {
-    text-decoration: none;
-    color: #ffffff;
+  text-decoration: none;
+  color: #ffffff;
 }
 
 /* Footer Styles */
 .mdl-mini-footer {
-    background-color: #81C784;
-    color: #ffffff;
-    padding: 10px;
+  background-color: #81c784;
+  color: #ffffff;
+  padding: 10px;
 }
 
 .mdl-mini-footer a {
-    color: #ffffff;
-    text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .mdl-mini-footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Page Content Styles */
 .page-content {
-    padding: 20px;
+  padding: 20px;
 }
 
 /* Section Heading Styles */
-h2, h3 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 600;
-    margin-bottom: 20px;
+h2,
+h3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
 /* Add margin to the list items for better spacing */
 .mdl-card__supporting-text ul.itemlist li {
-    line-height: 1.6;
-    color: #37474f;
-    margin-bottom: 8px;
-    padding-left: 1.5em;
+  line-height: 1.6;
+  color: #37474f;
+  margin-bottom: 8px;
+  padding-left: 1.5em;
 }
 
 /* Add margin to the event date for better spacing */
 .event-date {
-    font-style: italic;
-    color: #546e7a;
-    margin-top: 5px;
+  font-style: italic;
+  color: #546e7a;
+  margin-top: 5px;
 }
 .profile-image {
-    width: 100%; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Make it a circle */
+  width: 100%; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Make it a circle */
 }
 /* Improve spacing for the social media links *
 /* Add these styles to your existing CSS file */
-
-
-

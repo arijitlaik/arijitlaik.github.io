@@ -57,27 +57,68 @@
 
 <body class="mdl-demo">
 
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header  mdl-layout--fixed-tabs">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row ">
-                <h1 class="">Arijit Laik</span>
+                <h2 class="">Arijit Laik</h2>
                     <div class="mdl-layout-spacer"></div>
             </div>
         </header>
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title"></span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="#about"><i class="material-icons">info</i> About</a>
-                <a class="mdl-navigation__link" href="#experience"><i class="material-icons">work</i> Experience</a>
-                <a class="mdl-navigation__link" href="#skills"><i class="material-icons">build</i> Skills</a>
-                <a class="mdl-navigation__link" href="#education"><i class="material-icons">school</i> Education</a>
-                <a class="mdl-navigation__link" href="#publications"><i class="material-icons">library_books</i>
-                    Publication</a>
-                <a class="mdl-navigation__link" href="#voluntary-work"><i class="material-icons">people</i> Voluntary
-                    Work</a>
-
-                <!-- Add more links as needed -->
+                <!-- JavaScript function for navigation -->
+                <script>
+                    function navigateTo(destination) {
+                        location.href = '#' + destination;
+                    }
+                </script>
+            
+                <!-- Navigation items -->
+                <div class="mdl-navigation__link" onclick="navigateTo('about')">
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+                        <i class="material-icons">info</i>
+                    </button>
+                    <div class="mdl-typography ">About</div>
+                </div>
+            
+                <div class="mdl-navigation__link" onclick="navigateTo('experience')">
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+                        <i class="material-icons">work</i>
+                    </button>
+                    <div class="mdl-typography">Experience</div>
+                </div>
+            
+                <div class="mdl-navigation__link" onclick="navigateTo('skills')">
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+                        <i class="material-icons">build</i>
+                    </button>
+                    <div class="mdl-typography">Skills</div>
+                </div>
+            
+                <div class="mdl-navigation__link" onclick="navigateTo('education')">
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+                        <i class="material-icons">school</i>
+                    </button>
+                    <div class="mdl-typography">Education</div>
+                </div>
+            
+                <div class="mdl-navigation__link" onclick="navigateTo('publications')">
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+                        <i class="material-icons">library_books</i>
+                    </button>
+                    <div class="mdl-typography">Publication</div>
+                </div>
+            
+                <div class="mdl-navigation__link" onclick="navigateTo('voluntary-work')">
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+                        <i class="material-icons">people</i>
+                    </button>
+                    <div class="mdl-typography">Voluntary Work</div>
+                </div>
             </nav>
+            
+            
         </div>
 
         <main class="mdl-layout__content">
@@ -165,7 +206,7 @@
                             <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
                                 <div class="mdl-card">
                                     <div class="mdl-card__title">
-                                        <i class="material-icons">work</i> Consultant
+                                        <i class="material-icons">work </i> Consultant
                                     </div>
                                     <div class="mdl-card__supporting-text">
                                         <p>Freelance creative and science consultant for artists and performance makers.
@@ -440,106 +481,19 @@
                 </div>
             </div>
             <div class="mdl-mini-footer__right-section">
-                <ul class="mdl-mini-footer__link-list mdl-typography--subhead">
-                    <!-- Your optional content here -->
-                    <li><a href="https://www.linkedin.com/in/arijitlaik/" target="_blank"><i
-                                class="fab fa-linkedin"></i></a></li>
-                    <!-- <li><a href="https://facebook.com/laikarijit" target="_blank"><i class="fab fa-facebook"></i></a></li> -->
-                    <li><a href="https://twitter.com/arijitlaik" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="https://www.researchgate.net/profile/Arijit_Laik" target="_blank"><i
-                                class="fab fa-researchgate"></i></a></li>
-
-                    <li><a href="https://github.com/arijitlaik" target="_blank"><i class="fab fa-github"></i></a></li>
-                    <li><a href="https://neon1174.wordpress.com" target="_blank"><i class="fab fa-wordpress"></i></a>
-                    </li>
-                    <li><a href="https://soundcloud.com/arijit-laik" target="_blank"><i
-                                class="fab fa-soundcloud"></i></a></li>
-                    <li><a href="mailto:laikarijit@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
-                </ul>
-
+                <button class="mdl-mini-footer__social-btn" onclick="window.open('https://www.linkedin.com/in/arijitlaik/', '_blank')"><i class="fab fa-linkedin"></i></button>
+                <!-- <button class="mdl-mini-footer__social-btn" onclick="window.open('https://facebook.com/laikarijit', '_blank')"><i class="fab fa-facebook"></i></button> -->
+                <button class="mdl-mini-footer__social-btn" onclick="window.open('https://twitter.com/arijitlaik', '_blank')"><i class="fab fa-twitter"></i></button>
+                <button class="mdl-mini-footer__social-btn" onclick="window.open('https://www.researchgate.net/profile/Arijit_Laik', '_blank')"><i class="fab fa-researchgate"></i></button>
+                <button class="mdl-mini-footer__social-btn" onclick="window.open('https://github.com/arijitlaik', '_blank')"><i class="fab fa-github"></i></button>
+                <button class="mdl-mini-footer__social-btn" onclick="window.open('https://neon1174.wordpress.com', '_blank')"><i class="fab fa-wordpress"></i></button>
+                <!-- <button class="mdl-mini-footer__social-btn" onclick="window.open('https://soundcloud.com/arijit-laik', '_blank')"><i class="fab fa-soundcloud"></i></button> -->
+                <button class="mdl-mini-footer__social-btn" onclick="window.open('mailto:laikarijit@gmail.com', '_blank')"><i class="fas fa-envelope"></i></button>
             </div>
+            
         </footer>
     </div>
 
 </body>
 
 </html>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Function to fetch and display publications from a .bib file
-        function fetchPublications() {
-            // Replace 'your-publications.bib' with the path to your .bib file
-            fetch('publications.bib')
-                .then(response => response.text())
-                .then(bibTeX => {
-                    const publications = parseBibTeX(bibTeX);
-                    displayPublications(publications);
-                })
-                .catch(error => console.error('Error fetching publications:', error));
-        }
-
-        // Function to parse BibTeX data into an array of objects
-        function parseBibTeX(bibTeX) {
-            // Implement your own BibTeX parser or use an existing library
-            // This is a simplified example, and you may need a more robust solution for complex BibTeX files
-            const entries = bibTeX.split('@').filter(entry => entry.trim() !== '');
-            return entries.map(entry => {
-                // Implement your own BibTeX parsing logic here
-                // Extract relevant fields like title, author, year, etc.
-                // Example:
-                const titleMatch = entry.match(/title\s*=\s*{([^}]*)}/);
-                const authorMatch = entry.match(/author\s*=\s*{([^}]*)}/);
-                const yearMatch = entry.match(/year\s*=\s*{([^}]*)}/);
-
-                return {
-                    title: titleMatch ? titleMatch[1] : '',
-                    author: authorMatch ? authorMatch[1] : '',
-                    year: yearMatch ? yearMatch[1] : '',
-                };
-            });
-        }
-
-        // Function to display publications in the HTML
-        function displayPublications(publications) {
-            const publicationList = document.getElementById('publication-list');
-
-            publications.forEach(publication => {
-                const card = document.createElement('div');
-                card.classList.add('mdl-cell', 'mdl-cell--12-col');
-                card.innerHTML = `
-                <div class="mdl-card">
-                    <div class="mdl-card__title">
-                        ${publication.title}
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <p>${publication.author}</p>
-                        <p class="event-date">${publication.year}</p>
-                    </div>
-                </div>
-            `;
-
-                publicationList.appendChild(card);
-            });
-        }
-
-        // Fetch publications when the page is loaded
-        fetchPublications();
-    });
-</script>
-<style>
-    /* Override MDL Typography Subclasses */
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    ul,
-    ol,
-    li {
-        font-family: 'Josefin Sans', sans-serif !important;
-
-    }
-</style>

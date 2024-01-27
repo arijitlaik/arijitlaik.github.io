@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         scale: [1, 1],
                         rotate: [0, 0],
                         opacity: [0, 1],
-                        backgroundColor: ['#FFF', '#F5F5F5'], // Slightly change background color
+                        // backgroundColor: ['#FFF', '#F5F5F5'], // Slightly change background color
                         easing: 'easeInOutQuad',
                         duration: 800, // Decreased duration for a smoother effect
                         delay: anime.stagger(150), // Stagger the animations for each card
