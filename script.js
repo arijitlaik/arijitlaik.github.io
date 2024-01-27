@@ -60,4 +60,82 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fetch publications when the page is loaded
     fetchPublications();
+
+    function animateElements() {
+        // Example: animate the profile image
+        anime({
+            targets: '.profile-image',
+            translateY: [-20, 0], // Move the image up by 20px and then back down to its original position
+            opacity: [0, 1], // Fade in the image
+            easing: 'easeInOutQuad', // Easing function for smoother animation
+            duration: 800, // Animation duration in milliseconds
+            delay: 300, // Delay before starting the animation
+        });
+
+        // Add more animations for other elements as needed
+    }
+
+    function fadeInCards() {
+        const cards = document.querySelectorAll('.mdl-card');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Animate only if the card is in the viewport
+                    anime({
+                        targets: entry.target,
+                        translateY: [20, 0],
+                        opacity: [0, 1],
+                        easing: 'easeInOutQuad',
+                        duration: 800, // Decreased duration for a smoother effect
+                        delay: anime.stagger(150), // Stagger the animations for each card
+                    });
+
+                    // Stop observing once animated
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        // Observe each card
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    }
+
+    function complexAnimations() {
+        const cards = document.querySelectorAll('.mdl-card');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Animate only if the card is in the viewport
+                    anime({
+                        targets: entry.target,
+                        translateY: [-20, 0],
+                        scale: [1, 1],
+                        rotate: [0, 0],
+                        opacity: [0, 1],
+                        backgroundColor: ['#FFF', '#F5F5F5'], // Slightly change background color
+                        easing: 'easeInOutQuad',
+                        duration: 800, // Decreased duration for a smoother effect
+                        delay: anime.stagger(150), // Stagger the animations for each card
+                    });
+
+                    // Stop observing once animated
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        // Observe each card
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    }
+
+    fadeInCards();
+    complexAnimations();
+    animateElements();
 });
+
