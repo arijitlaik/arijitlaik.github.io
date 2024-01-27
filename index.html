@@ -61,7 +61,7 @@
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row ">
                 <h2 class="">Arijit Laik</h2>
-                    <div class="mdl-layout-spacer"></div>
+                <div class="mdl-layout-spacer"></div>
             </div>
         </header>
         <div class="mdl-layout__drawer">
@@ -73,7 +73,7 @@
                         location.href = '#' + destination;
                     }
                 </script>
-            
+
                 <!-- Navigation items -->
                 <div class="mdl-navigation__link" onclick="navigateTo('about')">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
@@ -81,35 +81,35 @@
                     </button>
                     <div class="mdl-typography ">About</div>
                 </div>
-            
+
                 <div class="mdl-navigation__link" onclick="navigateTo('experience')">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">work</i>
                     </button>
                     <div class="mdl-typography">Experience</div>
                 </div>
-            
+
                 <div class="mdl-navigation__link" onclick="navigateTo('skills')">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">build</i>
                     </button>
                     <div class="mdl-typography">Skills</div>
                 </div>
-            
+
                 <div class="mdl-navigation__link" onclick="navigateTo('education')">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">school</i>
                     </button>
                     <div class="mdl-typography">Education</div>
                 </div>
-            
+
                 <div class="mdl-navigation__link" onclick="navigateTo('publications')">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">library_books</i>
                     </button>
                     <div class="mdl-typography">Publication</div>
                 </div>
-            
+
                 <div class="mdl-navigation__link" onclick="navigateTo('voluntary-work')">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">people</i>
@@ -117,15 +117,15 @@
                     <div class="mdl-typography">Voluntary Work</div>
                 </div>
             </nav>
-            
-            
+
+
         </div>
 
         <main class="mdl-layout__content">
             <div class="page-content mdl-grid">
                 <!-- About Me Section -->
-                <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet" id="about">
-                    <section class="content-section">
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-shadow--2dp mainpage">
+                    <section class="content-section"  id="about">
                         <div class="mdl-grid">
                             <div class="mdl-cell mdl-cell--12-col">
                                 <h2><i class="material-icons">info</i> About Me</h2>
@@ -135,15 +135,13 @@
                                     <div class="mdl-card__title">
                                         <div class="mdl-grid">
                                             <!-- Profile image aligned to the side -->
-                                            <div class="mdl-cell mdl-cell--2-col mdl-cell--3-col-tablet">
+                                            <div class="mdl-cell mdl-cell--2-col mdl-cell--3-col-tablet mdl-cell--4-col-phone">
                                                 <img src="Profile.png" alt="Profile Image" class="profile-image">
                                             </div>
                                             <!-- Title and content aligned to the side of the image -->
                                             <div class="mdl-cell mdl-cell--10-col mdl-cell--7-col-tablet">
                                                 <span class="mdl-card__title-text">
                                                     <h3>Versatile Computational Geoscientist | Modeller</h3>
-
-
                                                 </span>
                                                 <h4>
                                                     As a Geoscientist, my background spans into numerical and data
@@ -174,13 +172,7 @@
                             </div>
                         </div>
                     </section>
-                </div>
-
-
-
-                <!-- Experience Section -->
-                <div class="mdl-cell mdl-cell--12-col" id="experience">
-                    <section class="content-section">
+                    <section class="content-section" id="experience">
                         <div class="mdl-grid">
                             <div class="mdl-cell mdl-cell--12-col">
                                 <h2><i class="material-icons">work</i> Experience</h2>
@@ -243,14 +235,12 @@
                             </div>
                         </div>
                     </section>
-                </div>
 
-                <!-- Skills Section -->
-                <div class="mdl-cell mdl-cell--12-col" id="skills">
-                    <section class="content-section">
-                        <h2><i class="material-icons">build</i> Skills</h2>
+                    <section class="content-section" id="skills">
                         <div class="mdl-grid">
-
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <h2><i class="material-icons">build</i> Skills</h2>
+                            </div>
                             <!-- Languages Card -->
                             <div class="mdl-cell mdl-cell--12-col">
                                 <div class="mdl-card">
@@ -319,13 +309,11 @@
 
                         </div>
                     </section>
-                </div>
-
-                <!-- Education Section -->
-                <div class="mdl-cell mdl-cell--12-col" id="education">
-                    <section class="content-section">
-                        <h2><i class="material-icons">school</i> Education</h2>
+                    <section class="content-section" id="education">
                         <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <h2><i class="material-icons">school</i> Education</h2>
+                            </div>
                             <div class="mdl-cell mdl-cell--6-col  mdl-cell--8-col-tablet">
                                 <div class="mdl-card">
                                     <div class="mdl-card__title">
@@ -353,22 +341,26 @@
                             </div>
                         </div>
                     </section>
-                </div>
-                <div class="mdl-cell mdl-cell--12-col" id="publications">
-                    <section class="content-section">
-                        <h2><i class="material-icons">library_books</i> Publications</h2>
-                        <div class="mdl-grid" id="publication-list">
+
+                    <section class="content-section" id="publications">
+
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <h2><i class="material-icons">library_books</i> Publications</h2>
+                            </div>
+                            <div id="publication-list">
+
+                            </div>
                             <!-- Publication items will be dynamically added here -->
                         </div>
                     </section>
-                </div>
 
-                <!-- Voluntary Work Section -->
-                <div class="mdl-cell mdl-cell--12-col" id="voluntary-work">
-                    <section class="content-section">
-                        <h2><i class="material-icons">people</i> Voluntary Work</h2>
+                    <section class="content-section" id="voluntary-work">
                         <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--12-col">
 
+                                <h2><i class="material-icons">people</i> Voluntary Work</h2>
+                            </div>
                             <div class="mdl-cell mdl-cell--6">
                                 <div class="mdl-card">
                                     <div class="mdl-card__title">
@@ -481,16 +473,28 @@
                 </div>
             </div>
             <div class="mdl-mini-footer__right-section">
-                <button class="mdl-mini-footer__social-btn" onclick="window.open('https://www.linkedin.com/in/arijitlaik/', '_blank')"><i class="fab fa-linkedin"></i></button>
+                <button class="mdl-mini-footer__social-btn"
+                    onclick="window.open('https://www.linkedin.com/in/arijitlaik/', '_blank')"><i
+                        class="fab fa-linkedin"></i></button>
                 <!-- <button class="mdl-mini-footer__social-btn" onclick="window.open('https://facebook.com/laikarijit', '_blank')"><i class="fab fa-facebook"></i></button> -->
-                <button class="mdl-mini-footer__social-btn" onclick="window.open('https://twitter.com/arijitlaik', '_blank')"><i class="fab fa-twitter"></i></button>
-                <button class="mdl-mini-footer__social-btn" onclick="window.open('https://www.researchgate.net/profile/Arijit_Laik', '_blank')"><i class="fab fa-researchgate"></i></button>
-                <button class="mdl-mini-footer__social-btn" onclick="window.open('https://github.com/arijitlaik', '_blank')"><i class="fab fa-github"></i></button>
-                <button class="mdl-mini-footer__social-btn" onclick="window.open('https://neon1174.wordpress.com', '_blank')"><i class="fab fa-wordpress"></i></button>
+                <button class="mdl-mini-footer__social-btn"
+                    onclick="window.open('https://twitter.com/arijitlaik', '_blank')"><i
+                        class="fab fa-twitter"></i></button>
+                <button class="mdl-mini-footer__social-btn"
+                    onclick="window.open('https://www.researchgate.net/profile/Arijit_Laik', '_blank')"><i
+                        class="fab fa-researchgate"></i></button>
+                <button class="mdl-mini-footer__social-btn"
+                    onclick="window.open('https://github.com/arijitlaik', '_blank')"><i
+                        class="fab fa-github"></i></button>
+                <button class="mdl-mini-footer__social-btn"
+                    onclick="window.open('https://neon1174.wordpress.com', '_blank')"><i
+                        class="fab fa-wordpress"></i></button>
                 <!-- <button class="mdl-mini-footer__social-btn" onclick="window.open('https://soundcloud.com/arijit-laik', '_blank')"><i class="fab fa-soundcloud"></i></button> -->
-                <button class="mdl-mini-footer__social-btn" onclick="window.open('mailto:laikarijit@gmail.com', '_blank')"><i class="fas fa-envelope"></i></button>
+                <button class="mdl-mini-footer__social-btn"
+                    onclick="window.open('mailto:laikarijit@gmail.com', '_blank')"><i
+                        class="fas fa-envelope"></i></button>
             </div>
-            
+
         </footer>
     </div>
 

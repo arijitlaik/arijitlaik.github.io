@@ -12,7 +12,9 @@ ol,
 li {
   font-family: "Josefin Sans", sans-serif !important;
 }
-
+.mdl-layout__content{
+    background-color: #ffffff;
+}
 .mdl-navigation {
   display: flex;
   flex-direction: column;
@@ -44,7 +46,7 @@ li {
   font-weight: bolder;
   font-size: x-large;
 }
-body {
+.mainpage {
   background-color: #e0fde0;
 }
 
@@ -52,7 +54,15 @@ body {
     margin-left: 160px;
     width: calc(100% - 160px)
 }
+.mdl-layout--fixed-drawer>.mdl-layout__content {
+    margin-left: 160px;
+}
 
+@media screen and (max-width: 1024px){
+.mdl-layout--fixed-drawer>.mdl-layout__content {
+    margin-left: 0;
+}
+}
 .mdl-layout__drawer {
   width: 160px;
   background-color: #eaffea;
