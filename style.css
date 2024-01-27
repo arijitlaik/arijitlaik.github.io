@@ -107,42 +107,13 @@ h2, h3 {
     color: #546e7a;
     margin-top: 5px;
 }
-
-/* Improve spacing for the social media links */
-.mdl-mini-footer__link-list li {
-    margin-right: 10px;
+.profile-image {
+    width: 100%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make it a circle */
 }
-
-/* Responsive Styles */
-@media screen and (max-width: 600px) {
-
-
-    .mdl-layout__drawer .mdl-navigation__link {
-        padding: 10px;
-    }
-}
-
+/* Improve spacing for the social media links *
 /* Add these styles to your existing CSS file */
 
-/* Style for the fade-in effect */
-.mdl-card {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
 
-.mdl-card.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Style for the active navigation link */
-.mdl-navigation__link.active {
-    color: #2196F3; /* Adjust the color as needed */
-}
-
-/* Style for the scroll-to-top link */
-.mdl-navigation__link#scroll-to-top-link {
-    color: #2196F3; /* Adjust the color as needed */
-}
 
