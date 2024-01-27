@@ -5,6 +5,20 @@ html, p, li {
 .mdl-navigation__link {
     font-size: 20px;
 }
+body{
+    background-color: #e0fde0d2;
+
+}
+.mdl-layout__drawer{
+    width: fit-content;
+    background-color: #cff1cf;
+}
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+
+    background-color: #669e69;
+    color: #ffffff;
+    transform: translateY(-4px);
+}
 /* Reset font size for specific elements */
 .mdl-card__supporting-text {
     font-size: inherit;
@@ -31,7 +45,7 @@ html, p, li {
 }
 
 .mdl-card:hover {
-    background-color: #81C784;
+    background-color: #cff7d1;
     transform: translateY(-4px);
 }
 
