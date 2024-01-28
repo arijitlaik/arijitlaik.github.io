@@ -5,6 +5,22 @@ function navigateTo(sectionId) {
     });
 }
 document.addEventListener('DOMContentLoaded', () => {
+    function toggleNightMode() {
+        const elementsToToggle = document.querySelectorAll('*');
+
+        // Toggle 'night-theme' class on all elements
+        elementsToToggle.forEach(function (element) {
+            element.classList.toggle('night-theme');
+        });
+    }
+
+    // Event listener for the theme switch checkbox
+    const themeSwitch = document.getElementById('theme-switch');
+    if (themeSwitch) {
+        themeSwitch.addEventListener('change', function () {
+            toggleNightMode();
+        });
+    }
     // Function to fetch and display publications from a .bib file
     function fetchPublications() {
         // Replace 'your-publications.bib' with the path to your .bib file
