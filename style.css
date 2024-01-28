@@ -9,11 +9,16 @@ h6,
 p,
 ul,
 ol,
-li {
+li,
+span{
   font-family: "Josefin Sans", sans-serif !important;
 }
 .mdl-layout__content{
     background-color: #ffffff;
+}
+.mdl-layout-title {
+  font-weight: 700;
+  font-size: 1.8rem;
 }
 .mdl-navigation {
   display: flex;
@@ -25,15 +30,16 @@ li {
   text-align: center;
   font-weight: bolder;
 }
-
+.mdl-list__item-avatar.material-icons {
+  background-color: inherit;
+  color: inherit;
+}
 .mdl-navigation__link button {
   margin-bottom: 8px;
 }
 /* Base Font Size */
-html,
-p,
-li {
-  font-size: 18px;
+.mdl-list__item{
+  font-size: 16px !important;
 }
 /* .mdl-navigation__link {
     font-size: 16px;
@@ -175,10 +181,16 @@ h3 {
   color: #546e7a;
   margin-top: 5px;
 }
-.profile-image {
-  width: 100%; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 50%; /* Make it a circle */
-}
+/* .profile-image {
+  width: 360px;;
+  height: auto; 
+  border-radius: 50%; 
+} */
 /* Improve spacing for the social media links *
 /* Add these styles to your existing CSS file */
+
+.demo-card-square > .mdl-card__title {
+  /* width: 480px; */
+  height: 420px;
+  background: url('Profile.png') center / cover;
+}

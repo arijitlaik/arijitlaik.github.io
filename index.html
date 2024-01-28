@@ -60,62 +60,56 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row ">
-                <h2 class="">Arijit Laik</h2>
+                <span class="mdl-layout-title">Arijit Laik</span>
                 <div class="mdl-layout-spacer"></div>
             </div>
         </header>
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title"></span>
             <nav class="mdl-navigation">
-                <!-- JavaScript function for navigation -->
-                <script>
-                    function navigateTo(destination) {
-                        location.href = '#' + destination;
-                    }
-                </script>
-
                 <!-- Navigation items -->
-                <div class="mdl-navigation__link" onclick="navigateTo('about')">
+                <a class="mdl-navigation__link" href="#about">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">info</i>
                     </button>
-                    <div class="mdl-typography ">About</div>
-                </div>
+                    <div class="mdl-typography">About</div>
+                </a>
 
-                <div class="mdl-navigation__link" onclick="navigateTo('experience')">
+                <a class="mdl-navigation__link" href="#experience">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">work</i>
                     </button>
                     <div class="mdl-typography">Experience</div>
-                </div>
+                </a>
 
-                <div class="mdl-navigation__link" onclick="navigateTo('skills')">
+                <a class="mdl-navigation__link" href="#skills">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">build</i>
                     </button>
                     <div class="mdl-typography">Skills</div>
-                </div>
+                </a>
 
-                <div class="mdl-navigation__link" onclick="navigateTo('education')">
+                <a class="mdl-navigation__link" href="#education">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">school</i>
                     </button>
                     <div class="mdl-typography">Education</div>
-                </div>
+                </a>
 
-                <div class="mdl-navigation__link" onclick="navigateTo('publications')">
+                <a class="mdl-navigation__link" href="#publications">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">library_books</i>
                     </button>
                     <div class="mdl-typography">Publication</div>
-                </div>
+                </a>
 
-                <div class="mdl-navigation__link" onclick="navigateTo('voluntary-work')">
+                <a class="mdl-navigation__link" href="#voluntary-work">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">people</i>
                     </button>
                     <div class="mdl-typography">Voluntary Work</div>
-                </div>
+                </a>
+
             </nav>
 
 
@@ -125,53 +119,83 @@
             <div class="page-content mdl-grid">
                 <!-- About Me Section -->
                 <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-shadow--2dp mainpage">
-                    <section class="content-section"  id="about">
+                    <section class="content-section" id="about">
                         <div class="mdl-grid">
                             <div class="mdl-cell mdl-cell--12-col">
                                 <h2><i class="material-icons">info</i> About Me</h2>
                             </div>
-                            <div class="mdl-cell mdl-cell--12-col">
-                                <div class="mdl-card">
-                                    <div class="mdl-card__title">
-                                        <div class="mdl-grid">
-                                            <!-- Profile image aligned to the side -->
-                                            <div class="mdl-cell mdl-cell--2-col mdl-cell--3-col-tablet mdl-cell--4-col-phone">
-                                                <img src="Profile.png" alt="Profile Image" class="profile-image">
-                                            </div>
-                                            <!-- Title and content aligned to the side of the image -->
-                                            <div class="mdl-cell mdl-cell--10-col mdl-cell--7-col-tablet">
-                                                <span class="mdl-card__title-text">
-                                                    <h3>Versatile Computational Geoscientist | Modeller</h3>
-                                                </span>
-                                                <h4>
-                                                    As a Geoscientist, my background spans into numerical and data
-                                                    <strong> modeling, simulation, analysis</strong>, and geospatial
-                                                    applications.
-                                                    Proficient and versatile in programming and communication, I
-                                                    derive joy from
-                                                    turning complex data into actionable intelligence
-                                                    with <strong>enthusiasm, precision, and dedication.</strong>
-                                                </h4>
-                                            </div>
-                                        </div>
+                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                <!-- Profile Card -->
+                                
+                                <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                                    <div class="mdl-card__title mdl-card--expand">
+                                        <h2 class="mdl-card__title-text">Versatile Computational Geoscientist | Modeller
+                                        </h2>
                                     </div>
                                     <div class="mdl-card__supporting-text">
+                                        <p>
+                                            As a Geoscientist, my background spans into numerical and data
+                                            <strong> modeling, simulation, analysis</strong>, and geospatial
+                                            applications.
+                                            Proficient and versatile in programming and communication, I derive joy from
+                                            turning complex data into actionable intelligence
+                                            with <strong>enthusiasm, precision, and dedication.</strong>
+                                        </p>
+                                    </div>
+                                    <!-- <div class="mdl-card__actions mdl-card--border">
+                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                            View Updates
+                                        </a>
+                                    </div> -->
+                                </div>
 
-                                        <ul class="itemlist">
-                                            <li>Proficient in translating complex models and datasets into deliverable
-                                                insights and compelling visualizations.</li>
-                                            <li>Dedicated to addressing challenges in data-driven decision-making,
-                                                climate change, energy transition, and sustainability.</li>
-                                            <li>Experienced in leveraging diverse approaches for effective and
-                                                collaborative problem-solving and decision support and eager to apply
-                                                technical acumen and dedication to contribute to impactful data-driven
-                                                solutions.</li>
+                                <!-- End of Profile Card -->
+                            </div>
+                            <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                <!-- Proficiencies List -->
+                                <div class="mdl-card">
+                                    <div class="mdl-card__title">
+                                        <i class="material-icons mdl-list__item-icon">assignment</i> Proficiencies
+                                    </div>
+                                    <div class="mdl-card__supporting-text">
+                                        <ul class="demo-list-two mdl-list">
+                                            <li class="mdl-list__item mdl-list__item--three-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="material-icons mdl-list__item-avatar">check</i>
+                                                    <span>Proficient in translating complex models and datasets into
+                                                        deliverable insights and compelling visualizations.</span>
+                                                </span>
+                                            </li>
+                                            <li class="mdl-list__item mdl-list__item--three-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="material-icons mdl-list__item-avatar">check</i>
+                                                    <span>Dedicated to addressing challenges in data-driven
+                                                        decision-making, climate change, energy transition, and
+                                                        sustainability.</span>
+                                                </span>
+                                            </li>
+                                            <li class="mdl-list__item mdl-list__item--three-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="material-icons mdl-list__item-avatar">check</i>
+                                                    <span>Experienced in leveraging diverse approaches for effective and
+                                                        collaborative problem-solving and decision support </span>
+                                                </span>
+                                            </li>
+                                            <li class="mdl-list__item mdl-list__item--three-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="material-icons mdl-list__item-avatar">check</i>
+                                                    <span>Eager to apply technical acumen and dedication to contribute
+                                                        to impactful data-driven solutions</span>
+                                                </span>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
+                                <!-- End of Proficiencies List -->
                             </div>
                         </div>
                     </section>
+
                     <section class="content-section" id="experience">
                         <div class="mdl-grid">
                             <div class="mdl-cell mdl-cell--12-col">
@@ -262,19 +286,54 @@
                                         <i class="material-icons">terrain</i> Domain Knowledge
                                     </div>
                                     <div class="mdl-card__supporting-text">
-                                        <ul class="itemlist">
-                                            <li><strong>Geoscience:</strong> Fluid Dynamics (low Reynolds number),
-                                                Numerical Modeling (FEM + PIC), Tectonics and Structural Geology,
-                                                Geo-spatial Analysis, 3D Geological Modeling</li>
-                                            <li><strong>Computational Expertise:</strong> Simulation Design, Parallel
-                                                Computing (MPI), FAIR Principles, Progressive Web Apps</li>
-                                            <li><strong>Data Modelling:</strong> Curve fitting, Time Series Forecasting
-                                                (ARMA), Clustering (K-means, t-SNE), Classification (Random Forest,
-                                                K-NN), Gaussian fitting</li>
-                                            <li><strong>Statistical Analysis:</strong> Regression Analysis (Linear,
-                                                polynomial, logistic), dimensionality reduction (PCA), Inferential
-                                                Statistics (Chi-square test, T-test, F-test), Log Transformation,
-                                                Distribution Analysis</li>
+                                        <ul class="demo-list-two mdl-list">
+                                            <li class="mdl-list__item mdl-list__item--three-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="material-icons mdl-list__item-avatar">waves</i>
+                                                    <span>Geoscience:</span>
+                                                    <span class="mdl-list__item-text-body">
+                                                        Fluid Dynamics (low Reynolds number), Numerical Modeling (FEM +
+                                                        PIC),
+                                                        Tectonics and Structural Geology, Geo-spatial Analysis, 3D
+                                                        Geological Modeling
+                                                    </span>
+                                                </span>
+                                            </li>
+                                            <li class="mdl-list__item mdl-list__item--three-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i
+                                                        class="material-icons mdl-list__item-avatar">settings_ethernet</i>
+                                                    <span>Computational Expertise:</span>
+                                                    <span class="mdl-list__item-text-body">
+                                                        Simulation Design, Parallel Computing (MPI), FAIR Principles,
+                                                        Progressive Web Apps
+                                                    </span>
+                                                </span>
+                                            </li>
+                                            <li class="mdl-list__item mdl-list__item--three-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="material-icons mdl-list__item-avatar">insert_chart</i>
+                                                    <span>Data Modelling:</span>
+                                                    <span class="mdl-list__item-text-body">
+                                                        Curve fitting, Time Series Forecasting (ARMA), Clustering
+                                                        (K-means, t-SNE),
+                                                        Classification (Random Forest, K-NN), Gaussian fitting
+                                                    </span>
+                                                </span>
+                                            </li>
+                                            <li class="mdl-list__item mdl-list__item--three-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="material-icons mdl-list__item-avatar">equalizer</i>
+                                                    <span>Statistical Analysis:</span>
+                                                    <span class="mdl-list__item-text-body">
+                                                        Regression Analysis (Linear, polynomial, logistic),
+                                                        dimensionality reduction (PCA),
+                                                        Inferential Statistics (Chi-square test, T-test, F-test), Log
+                                                        Transformation,
+                                                        Distribution Analysis
+                                                    </span>
+                                                </span>
+                                            </li>
                                         </ul>
 
                                     </div>
@@ -285,23 +344,76 @@
                             <div class="mdl-cell mdl-cell--6-col  mdl-cell--8-col-tablet">
                                 <div class="mdl-card">
                                     <div class="mdl-card__title">
-                                        <i class="material-icons">code</i> Technical Skills: Frameworks and Tools
+                                        <i class="material-icons ">code</i> Technical Skills:
+                                        Frameworks and Tools
                                     </div>
                                     <div class="mdl-card__supporting-text">
-                                        <ul class="itemlist">
-                                            <li><strong>Programming/Scripting:</strong> Python, R, Julia, C/C++,
-                                                Bash/Shell, SQL, JavaScript, NodeJS, HTML5</li>
-                                            <li><strong>Modeling and Analysis:</strong> Numpy, Scipy, Pandas, PETSc,
-                                                HDF5, Numba, Scikit-Learn, Beautiful Soup</li>
-                                            <li><strong>Data Visualization:</strong> Seaborn, Matplotlib, Plotly, D3.js,
-                                                Tableau, Paraview</li>
-                                            <li><strong>Data Management:</strong> Dask, Rclone, Google Drive API, SQL
+                                        <ul class="mdl-list">
+                                            <li class="mdl-list__item mdl-list__item--two-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="material-icons  mdl-list__item-icon">code</i>
+                                                    <span>Programming/Scripting:</span>
+                                                    <span class="mdl-list__item-sub-title">
+                                                        Python, R, Julia, C/C++, Bash/Shell, SQL, JavaScript, NodeJS,
+                                                        HTML5
+                                                    </span>
+                                                </span>
                                             </li>
-                                            <li><strong>Cloud Environments and Deployment:</strong> Docker, Singularity,
-                                                Google Cloud Console</li>
-                                            <li><strong>Geospatial Applications:</strong> QGIS, Google Earth Engine,
-                                                GlobalMapper, Gplates</li>
-                                            <li><strong>Collaborative Tools:</strong> Git, CI/CD, Jira, Slack</li>
+                                            <li class="mdl-list__item mdl-list__item--two-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="material-icons  mdl-list__item-icon">functions</i>
+                                                    <span>Modeling and Analysis:</span>
+                                                    <span class="mdl-list__item-sub-title">
+                                                        Numpy, Scipy, Pandas, PETSc, HDF5, Numba, Scikit-Learn,
+                                                        Beautiful Soup
+                                                    </span>
+                                                </span>
+                                            </li>
+                                            <li class="mdl-list__item mdl-list__item--two-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="material-icons  mdl-list__item-icon">bar_chart</i>
+                                                    <span>Data Visualization:</span>
+                                                    <span class="mdl-list__item-sub-title">
+                                                        Seaborn, Matplotlib, Plotly, D3.js, Tableau, Paraview
+                                                    </span>
+                                                </span>
+                                            </li>
+                                            <li class="mdl-list__item mdl-list__item--two-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="material-icons  mdl-list__item-icon">storage</i>
+                                                    <span>Data Management:</span>
+                                                    <span class="mdl-list__item-sub-title">
+                                                        Dask, Rclone, Google Drive API, SQL
+                                                    </span>
+                                                </span>
+                                            </li>
+                                            <li class="mdl-list__item mdl-list__item--two-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="material-icons  mdl-list__item-icon">cloud_upload</i>
+                                                    <span>Cloud Environments and Deployment:</span>
+                                                    <span class="mdl-list__item-sub-title">
+                                                        Docker, Singularity, Google Cloud Console
+                                                    </span>
+                                                </span>
+                                            </li>
+                                            <li class="mdl-list__item mdl-list__item--two-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="material-icons  mdl-list__item-icon">map</i>
+                                                    <span>Geospatial Applications:</span>
+                                                    <span class="mdl-list__item-sub-title">
+                                                        QGIS, Google Earth Engine, GlobalMapper, Gplates
+                                                    </span>
+                                                </span>
+                                            </li>
+                                            <li class="mdl-list__item mdl-list__item--two-line">
+                                                <span class="mdl-list__item-primary-content">
+                                                    <i class="material-icons  mdl-list__item-icon">group</i>
+                                                    <span>Collaborative Tools:</span>
+                                                    <span class="mdl-list__item-sub-title">
+                                                        Git, CI/CD, Jira, Slack
+                                                    </span>
+                                                </span>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -309,6 +421,7 @@
 
                         </div>
                     </section>
+
                     <section class="content-section" id="education">
                         <div class="mdl-grid">
                             <div class="mdl-cell mdl-cell--12-col">
@@ -343,7 +456,6 @@
                     </section>
 
                     <section class="content-section" id="publications">
-
                         <div class="mdl-grid">
                             <div class="mdl-cell mdl-cell--12-col">
                                 <h2><i class="material-icons">library_books</i> Publications</h2>
