@@ -205,8 +205,8 @@ h3 {
 }
 .demo-card-square > .mdl-card__title {
   /* width: 480px; */
-  height: 512px;
+  height: 480px;
   color: #fff;
 
-  background: url('Profile.png') center / cover ;
+  background: url('Profile.png') top / cover ;
 }
