@@ -175,6 +175,17 @@ h3 {
   padding-left: 1.5em;
 }
 
+.mdl-list__item--three-line .mdl-list__item-primary-content,
+.mdl-list__item--three-line,
+.mdl-list__item--two-line,
+.mdl-list__item--two-line .mdl-list__item-primary-content {
+  height: auto;
+}
+
+
+.mdl-list__item--three-line .mdl-list__item-text-body {
+  height: auto;
+}
 /* Add margin to the event date for better spacing */
 .event-date {
   font-style: italic;
@@ -188,9 +199,14 @@ h3 {
 } */
 /* Improve spacing for the social media links *
 /* Add these styles to your existing CSS file */
-
+.demo-card-square >  .mdl-card__title .mdl-card__title-text{
+  font-weight: 800 !important;
+  font-size: 2rem !important;
+}
 .demo-card-square > .mdl-card__title {
   /* width: 480px; */
-  height: 420px;
-  background: url('Profile.png') center / cover;
+  height: 512px;
+  color: #fff;
+
+  background: url('Profile.png') center / cover ;
 }
