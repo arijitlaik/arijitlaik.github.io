@@ -1,3 +1,9 @@
+function navigateTo(sectionId) {
+    // Scroll to the specified section
+    document.querySelector(sectionId).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
 document.addEventListener('DOMContentLoaded', () => {
     // Function to fetch and display publications from a .bib file
     function fetchPublications() {
