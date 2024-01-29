@@ -1,10 +1,13 @@
-function navigateTo(sectionId) {
-    // Scroll to the specified section
-    document.querySelector(sectionId).scrollIntoView({
-        behavior: 'smooth'
-    });
-}
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+
+    // Utility function to check if it's currently night based on time
+    function isNightTime() {
+        const now = new Date();
+        const hours = now.getHours();
+        return hours < 6 || hours >= 18; // Assume night time if it's before 6 AM or after 6 PM
+    }
+
+    // Function to toggle night mode
     function toggleNightMode(isNight) {
         const elementsToToggle = document.querySelectorAll('*');
 
@@ -24,13 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Function to check if it's currently night based on time
-    function isNightTime() {
-        const now = new Date();
-        const hours = now.getHours();
-        return hours < 6 || hours >= 18; // Assume night time if it's before 6 AM or after 6 PM
-    }
-
     // Function to update night mode based on system preference and time
     function updateNightMode() {
         const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -46,34 +42,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initial update when the page loads
-    updateNightMode();
-
     // Listen for changes in system theme preference
     if (window.matchMedia) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateNightMode);
     }
+
     // Function to fetch and display publications from a .bib file
-    function fetchPublications() {
-        // Replace 'your-publications.bib' with the path to your .bib file
-        fetch('publications.bib')
-            .then(response => response.text())
-            .then(bibTeX => {
-                const publications = parseBibTeX(bibTeX);
-                displayPublications(publications);
-            })
-            .catch(error => console.error('Error fetching publications:', error));
+    async function fetchPublications() {
+        try {
+            const response = await fetch('publications.bib');
+            if (!response.ok) {
+                throw new Error('Failed to fetch publications');
+            }
+            const bibTeX = await response.text();
+            const publications = parseBibTeX(bibTeX);
+            displayPublications(publications);
+        } catch (error) {
+            console.error('Error fetching publications:', error);
+            throw error;
+        }
     }
 
     // Function to parse BibTeX data into an array of objects
     function parseBibTeX(bibTeX) {
-        // Implement your own BibTeX parser or use an existing library
-        // This is a simplified example, and you may need a more robust solution for complex BibTeX files
         const entries = bibTeX.split('@').filter(entry => entry.trim() !== '');
         return entries.map(entry => {
-            // Implement your own BibTeX parsing logic here
-            // Extract relevant fields like title, author, year, etc.
-            // Example:
             const titleMatch = entry.match(/title\s*=\s*{([^}]*)}/);
             const authorMatch = entry.match(/author\s*=\s*{([^}]*)}/);
             const yearMatch = entry.match(/year\s*=\s*{([^}]*)}/);
@@ -89,6 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to display publications in the HTML
     function displayPublications(publications) {
         const publicationList = document.getElementById('publication-list');
+
+        if (!publicationList) {
+            console.error('Publication list element not found.');
+            return;
+        }
 
         // Clear existing content in the publicationList
         publicationList.innerHTML = '';
@@ -112,84 +110,82 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fetch publications when the page is loaded
-    fetchPublications();
-
+    // Function to animate elements
     function animateElements() {
-        // Example: animate the profile image
         anime({
             targets: '.profile-image',
-            translateY: [-20, 0], // Move the image up by 20px and then back down to its original position
-            opacity: [0, 1], // Fade in the image
-            easing: 'easeInOutQuad', // Easing function for smoother animation
-            duration: 800, // Animation duration in milliseconds
-            delay: 300, // Delay before starting the animation
+            translateY: [-20, 0],
+            opacity: [0, 1],
+            easing: 'easeInOutQuad',
+            duration: 800,
+            delay: 300,
         });
 
         // Add more animations for other elements as needed
     }
 
+    // Function to fade in cards
     function fadeInCards() {
         const cards = document.querySelectorAll('.mdl-card');
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Animate only if the card is in the viewport
                     anime({
                         targets: entry.target,
                         translateY: [20, 0],
                         opacity: [0, 1],
                         easing: 'easeInOutQuad',
-                        duration: 800, // Decreased duration for a smoother effect
-                        delay: anime.stagger(150), // Stagger the animations for each card
+                        duration: 800,
+                        delay: anime.stagger(150),
                     });
 
-                    // Stop observing once animated
                     observer.unobserve(entry.target);
                 }
             });
         });
 
-        // Observe each card
         cards.forEach(card => {
             observer.observe(card);
         });
     }
 
+    // Function for complex animations
     function complexAnimations() {
         const cards = document.querySelectorAll('.mdl-card');
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Animate only if the card is in the viewport
                     anime({
                         targets: entry.target,
                         translateY: [-20, 0],
                         scale: [1, 1],
                         rotate: [0, 0],
                         opacity: [0, 1],
-                        // backgroundColor: ['#FFF', '#F5F5F5'], // Slightly change background color
                         easing: 'easeInOutQuad',
-                        duration: 800, // Decreased duration for a smoother effect
-                        delay: anime.stagger(150), // Stagger the animations for each card
+                        duration: 800,
+                        delay: anime.stagger(150),
                     });
 
-                    // Stop observing once animated
                     observer.unobserve(entry.target);
                 }
             });
         });
 
-        // Observe each card
         cards.forEach(card => {
             observer.observe(card);
         });
     }
 
-    fadeInCards();
-    complexAnimations();
-    animateElements();
+    // Fetch publications when the page is loaded and then proceed with other functions
+    try {
+        await fetchPublications();
+        fadeInCards();
+        complexAnimations();
+        animateElements();
+        updateNightMode();
+    } catch (error) {
+        console.error('Error during initialization:', error);
+    }
 });
-
