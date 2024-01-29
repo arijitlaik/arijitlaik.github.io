@@ -16,6 +16,9 @@ span{
 .mdl-layout__content{
     background-color: #ffffff;
 }
+.mdl-layout__drawer {
+border-right: 0;
+}
 .mdl-layout-title {
   font-weight: 700;
   font-size: 1.8rem;
@@ -225,16 +228,12 @@ h3 {
 }
 /* Night Theme */
 .mainpage.night-theme {
-  background-color: #212121; /* Dark background color for night theme */
+  background-color: #424242; /* Dark background color for night theme */
 }
 
-body.night-theme {
-  background-color: #212121; /* Dark background color for night theme */
-  /* color: #ffffff; Light text color for night theme */
-}
 
 .mdl-layout__content.night-theme {
-  background-color: #333; /* Darker background color for night theme content */
+  background-color: #8a8989; /* Darker background color for night theme content */
 }
 
 .mdl-mini-footer--social-btn.night-theme,

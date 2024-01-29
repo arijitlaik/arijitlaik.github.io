@@ -5,21 +5,53 @@ function navigateTo(sectionId) {
     });
 }
 document.addEventListener('DOMContentLoaded', () => {
-    function toggleNightMode() {
+    function toggleNightMode(isNight) {
         const elementsToToggle = document.querySelectorAll('*');
 
-        // Toggle 'night-theme' class on all elements
+        // Toggle 'night-theme' class on all elements based on the current mode
         elementsToToggle.forEach(function (element) {
-            element.classList.toggle('night-theme');
+            if (isNight) {
+                element.classList.add('night-theme');
+            } else {
+                element.classList.remove('night-theme');
+            }
         });
+
+        // Update the state of the theme switch checkbox
+        const themeSwitch = document.getElementById('theme-switch');
+        if (themeSwitch) {
+            themeSwitch.checked = isNight;
+        }
+    }
+
+    // Function to check if it's currently night based on time
+    function isNightTime() {
+        const now = new Date();
+        const hours = now.getHours();
+        return hours < 6 || hours >= 18; // Assume night time if it's before 6 AM or after 6 PM
+    }
+
+    // Function to update night mode based on system preference and time
+    function updateNightMode() {
+        const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const isNight = prefersDarkMode || isNightTime();
+        toggleNightMode(isNight);
     }
 
     // Event listener for the theme switch checkbox
     const themeSwitch = document.getElementById('theme-switch');
     if (themeSwitch) {
         themeSwitch.addEventListener('change', function () {
-            toggleNightMode();
+            toggleNightMode(themeSwitch.checked);
         });
+    }
+
+    // Initial update when the page loads
+    updateNightMode();
+
+    // Listen for changes in system theme preference
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateNightMode);
     }
     // Function to fetch and display publications from a .bib file
     function fetchPublications() {
