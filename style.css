@@ -268,7 +268,7 @@ body.night-theme,
 }
 
 .mdl-card__title.night-theme {
-  background-color: #555; /* Darker background color for night theme card title */
+  background-color: #555; Darker background color for night theme card title
 }
 
 .mdl-card__supporting-text.night-theme {
@@ -295,5 +295,85 @@ body.night-theme,
 .event-date.night-theme {
   color: #777; /* Event date color for night theme */
 }
+/* Hero Section Styles */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
+}
 
-/* Add more night theme styles as needed */
+.hero-content {
+  flex: 1;
+  max-width: 60%;
+}
+
+.hero-title {
+  font-size: 8rem; /* Default font size for large screens */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  font-size: 2.5rem; /* Default font size for large screens */
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.2em;
+  color: #666;
+  line-height: 1.6;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  background-color: #ffffff00;!important
+}
+
+/* Responsive Styling */
+@media (max-width: 1200px) {
+  .hero-title {
+      font-size: 7rem;
+  }
+  .hero-subtitle {
+      font-size: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-title {
+      font-size: 6rem;
+  }
+  .hero-subtitle {
+      font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .hero-content {
+      max-width: 100%;
+      margin-bottom: 30px;
+  }
+
+  .hero-title {
+      font-size: 5rem;
+  }
+  .hero-subtitle {
+      font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+      font-size: 4rem;
+  }
+  .hero-subtitle {
+      font-size: 1.2rem;
+  }
+}
