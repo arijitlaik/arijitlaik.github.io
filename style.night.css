@@ -1,0 +1,141 @@
+
+.mdl-list__item {
+  font-size: 16px !important;
+}
+
+.mainpage.night-theme {
+  background-color: #424242;
+}
+
+.mdl-layout__content.night-theme {
+  background-color: #8a8989;
+}
+
+.mdl-mini-footer--social-btn.night-theme,
+.mdl-mini-footer__social-btn.night-theme {
+  background-color: inherit;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+body.night-theme,
+.mdl-layout.night-theme {
+  background-color: #2c2c2c;
+}
+
+.mdl-layout__drawer.night-theme {
+  background-color: #333;
+}
+
+.mdl-layout__drawer.night-theme .mdl-navigation .mdl-navigation__link:hover {
+  background-color: #555;
+}
+
+.mdl-card.night-theme {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  border: 1px solid #444;
+  background-color: #333;
+}
+
+.mdl-card.night-theme:hover {
+  background-color: #555;
+}
+
+.mdl-card__title.night-theme {
+  background-color: #555;
+}
+
+.mdl-card__supporting-text.night-theme {
+  color: #555;
+}
+
+.mdl-layout__header.night-theme {
+  background-color: #555;
+}
+
+.mdl-mini-footer.night-theme {
+  background-color: #555;
+}
+
+.page-content.night-theme {
+  background-color: #333;
+  color: #bbb;
+}
+
+.night-theme {
+  color: #ffffff !important;
+}
+
+.event-date.night-theme {
+  color: #777;
+}
+.mdl-list__item {
+  font-size: 16px !important;
+}
+
+.mainpage.night-theme {
+  background-color: #424242;
+}
+
+.mdl-layout__content.night-theme {
+  background-color: #8a8989;
+}
+
+.mdl-mini-footer--social-btn.night-theme,
+.mdl-mini-footer__social-btn.night-theme {
+  background-color: inherit;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+body.night-theme,
+.mdl-layout.night-theme {
+  background-color: #2c2c2c;
+}
+
+.mdl-layout__drawer.night-theme {
+  background-color: #333;
+}
+
+.mdl-layout__drawer.night-theme .mdl-navigation .mdl-navigation__link:hover {
+  background-color: #555;
+}
+
+.mdl-card.night-theme {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  border: 1px solid #444;
+  background-color: #333;
+}
+
+.mdl-card.night-theme:hover {
+  background-color: #555;
+}
+
+.mdl-card__title.night-theme {
+  background-color: #555;
+}
+
+.mdl-card__supporting-text.night-theme {
+  color: #555;
+}
+
+.mdl-layout__header.night-theme {
+  background-color: #555;
+}
+
+.mdl-mini-footer.night-theme {
+  background-color: #555;
+}
+
+.page-content.night-theme {
+  background-color: #333;
+  color: #bbb;
+}
+
+.night-theme {
+  color: #ffffff !important;
+}
+
+.event-date.night-theme {
+  color: #777;
+}
