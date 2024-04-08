@@ -317,7 +317,9 @@ body {
 
 /* END: Monochrome Light Color Scheme */
 /* END: Minimal Color Palette */
-
+.mdl-layout__header {
+  padding: 1px;
+}
 
 .mdl-list__item {
   font-size: 16px !important;

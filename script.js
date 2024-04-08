@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const elementsToToggle = document.querySelectorAll('*');
         const themeSwitch = document.getElementById('theme-switch');
         const isNight = themeSwitch.classList.contains('night-theme');
+        const lightIcon = themeSwitch.querySelector('.light-icon');
+        const darkIcon = themeSwitch.querySelector('.dark-icon');
 
         // Toggle 'night-theme' class on all elements based on the current mode
         elementsToToggle.forEach(function (element) {
@@ -23,11 +25,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
 
-        // Toggle 'night-theme' class on the theme switch button
+        // Toggle 'night-theme' class on the theme switch button and fade between icons
         if (isNight) {
             themeSwitch.classList.remove('night-theme');
+            lightIcon.style.display = '';
+            darkIcon.style.display = 'none';
         } else {
             themeSwitch.classList.add('night-theme');
+            lightIcon.style.display = 'none';
+            darkIcon.style.display = '';
         }
     }
     
@@ -127,6 +133,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Function to fade in cards
     function fadeInCards() {
+        
         const cards = document.querySelectorAll('.mdl-card');
 
         const observer = new IntersectionObserver(entries => {

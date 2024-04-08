@@ -65,16 +65,21 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row ">
-                <span class="mdl-layout-title">Arijit Laik</span>
+                <span class="mdl-navigation__link">Arijit Laik</span>
 
                 <div class="mdl-layout-spacer"></div>
+                
                 <nav class="mdl-navigation mdl-layout--large-screen-only">
-                    <a class="mdl-navigation__link" href="#experience">Experience</a>
+                    <button id="theme-switch" class="mdl-button mdl-js-button mdl-button--icon mdl-button--fab mdl-js-ripple-effect">
+                        <i class="material-icons light-icon">dark_mode</i>
+                        <i class="material-icons dark-icon" style="display: none;">_mode</i>
+                    </button>
+                    <!-- <a class="mdl-navigation__link" href="#experience">Experience</a>
                     <a class="mdl-navigation__link" href="#skills">Skills</a>
                     <a class="mdl-navigation__link" href="#education">Education</a>
                     <a class="mdl-navigation__link" href="#publications">Publications</a>
                     <a class="mdl-navigation__link" href="#voluntary-work">Voluntary Work</a>
-                </nav>
+                </nav>-->
 
             </div>
         </header>
@@ -82,11 +87,7 @@
             <span class="mdl-layout-title"></span>
             <nav class="mdl-navigation">
 
-                <div class="mdl-navigation__link" onclick="document.getElementById('theme-switch').click();" ontouchstart="document.getElementById('theme-switch').click();">
-                    <button id="theme-switch" class="mdl-button mdl-js-button mdl-button--icon mdl-button--fab mdl-js-ripple-effect">
-                        <i class="material-icons">brightness_4</i>
-                    </button>
-                </div>
+                
                 <!-- Navigation items -->
                 <a class="mdl-navigation__link" href="#about" onclick="navigateTo('#about')" ontouchstart="navigateTo('#about')">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
