@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
+    
 
     // Utility function to check if it's currently night based on time
     function isNightTime() {
@@ -8,25 +9,28 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Function to toggle night mode
-    function toggleNightMode(isNight) {
+    function toggleNightMode() {
         const elementsToToggle = document.querySelectorAll('*');
+        const themeSwitch = document.getElementById('theme-switch');
+        const isNight = themeSwitch.classList.contains('night-theme');
 
         // Toggle 'night-theme' class on all elements based on the current mode
         elementsToToggle.forEach(function (element) {
             if (isNight) {
-                element.classList.add('night-theme');
-            } else {
                 element.classList.remove('night-theme');
+            } else {
+                element.classList.add('night-theme');
             }
         });
 
-        // Update the state of the theme switch checkbox
-        const themeSwitch = document.getElementById('theme-switch');
-        if (themeSwitch) {
-            themeSwitch.checked = isNight;
+        // Toggle 'night-theme' class on the theme switch button
+        if (isNight) {
+            themeSwitch.classList.remove('night-theme');
+        } else {
+            themeSwitch.classList.add('night-theme');
         }
     }
-
+    
     // Function to update night mode based on system preference and time
     function updateNightMode() {
         const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -34,19 +38,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         toggleNightMode(isNight);
     }
 
-    // Event listener for the theme switch checkbox
+    // Event listener for the theme switch button
     const themeSwitch = document.getElementById('theme-switch');
     if (themeSwitch) {
-        themeSwitch.addEventListener('change', function () {
-            toggleNightMode(themeSwitch.checked);
-        });
+        themeSwitch.addEventListener('click', toggleNightMode);
     }
 
     // Listen for changes in system theme preference
     if (window.matchMedia) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateNightMode);
     }
-
     // Function to fetch and display publications from a .bib file
     async function fetchPublications() {
         try {
@@ -181,10 +182,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Fetch publications when the page is loaded and then proceed with other functions
     try {
         await fetchPublications();
+        updateNightMode();
         fadeInCards();
         complexAnimations();
         animateElements();
-        updateNightMode();
     } catch (error) {
         console.error('Error during initialization:', error);
     }

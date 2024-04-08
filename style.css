@@ -60,11 +60,20 @@ border-right: 0;
 }
 
 .mdl-layout--fixed-drawer.is-upgraded:not(.is-small-screen)>.mdl-layout__header {
-    margin-left: 160px;
-    width: calc(100% - 160px)
+    margin-left: 120px;
+    width: calc(100% - 120px)
 }
 .mdl-layout--fixed-drawer>.mdl-layout__content {
-    margin-left: 160px;
+    margin-left: 120px;
+}
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+  display: block;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding: 16px 0px;
+  margin: 0;
+  color: #757575;
 }
 
 @media screen and (max-width: 1024px){
@@ -73,7 +82,7 @@ border-right: 0;
 }
 }
 .mdl-layout__drawer {
-  width: 160px;
+  width: 120px;
   background-color: #eaffea;
 }
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
@@ -376,4 +385,29 @@ body.night-theme,
   .hero-subtitle {
       font-size: 1.2rem;
   }
+}
+/* Additional CSS for Hero Section */
+
+.hero-content {
+  padding: 0 20px;
+}
+
+.hero-description {
+  margin-bottom: 20px;
+}
+
+.hero-cta-group {
+  margin-top: 30px;
+}
+
+.hero-cta {
+  margin-right: 20px;
+}
+
+.hero-socials {
+  margin-top: 20px;
+}
+
+.hero-socials .mdl-button {
+  margin-right: 10px;
 }

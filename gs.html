@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Scholar Scraper</title>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Fetch the HTML content of the Google Scholar page
+        fetch('https://scholar.google.com/citations?user=ZvlgRB8AAAAJ')
+            .then(response => response.text())
+            .then(html => {
+                // Load the HTML content into Cheerio
+                const $ = cheerio.load(html);
+
+                // Extract title of the page
+                const pageTitle = $('title').text();
+
+                // Extract article authors, years, and links
+                const articles = [];
+                $('.gs_ai').each((index, element) => {
+                    const author = $(element).find('.gs_ai_name').text().trim();
+                    const year = $(element).find('.gs_ai_ydc').text().trim();
+                    const link = $(element).find('.gs_ai_pho').attr('href');
+                    articles.push({ author, year, link });
+                });
+
+                // Display the extracted information including page title
+                const output = $('#output');
+                output.append(`<h1>${pageTitle}</h1>`);
+                articles.forEach(article => {
+                    const articleElement = $('<div>');
+                    articleElement.html(`<p>Author: ${article.author}</p><p>Year: ${article.year}</p><p>Link: <a href="${article.link}">${article.link}</a></p><hr>`);
+                    output.append(articleElement);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    </script>
+</body>
+</html>
