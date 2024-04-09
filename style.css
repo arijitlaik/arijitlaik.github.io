@@ -442,12 +442,10 @@ body.night-theme .mdl-button:hover .mdl-icon {
 }
 .curve-bottom {
   transform: rotate(180deg);
-  bottom: -50%; /* Position the element halfway up from the bottom */
 }
 
-.curve-top {
-  top: -50%; /* Position the element halfway up from the bottom */
-}
+/* .curve-top {
+} */
 /* Day theme */
 .curved-section .content-section  {
   background-color: #f9f2dc; /* slightly darker warm color */
