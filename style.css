@@ -192,10 +192,16 @@ h3 {
   color: #666;
   line-height: 1.6;
 }
-
 .hero-image img {
   max-width: 100%;
   height: auto;
+  filter: sepia(0.2); /* reduced intensity sepia filter for a more subtle effect */
+}
+
+.hero-image img.night-theme {
+  max-width: 100%;
+  height: auto;
+  filter: none; /* remove sepia filter for night theme */
 }
 
 @media (max-width: 1200px) {
