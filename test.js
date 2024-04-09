@@ -82,48 +82,70 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // Function to animate elements
     function animateElements() {
-        anime.timeline({
-            targets: '.hero-image',
-            easing: 'easeInOutSine',
-            duration: 1000,
-        })
-            .add({
-                translateY: [-20, 0],
-                opacity: [0, 1],
-                delay: anime.stagger(100),
-            });
-    }
-
-
-    function animateCard(card) {
         anime({
-            targets: card,
-            translateY: [20, 0],
+            targets: '.hero-image',
+            translateY: [-20, 0],
             opacity: [0, 1],
-            easing: 'easeInOutSine',
-            duration: 1000,
-            delay: anime.stagger(100),
-            begin: function () {
-                card.classList.add('animate');
-            }
+            easing: 'easeInOutQuad',
+            duration: 800,
+            delay: 300,
         });
+
+        // Add more animations for other elements as needed
     }
 
     // Function to fade in cards
     function fadeInCards() {
+
         const cards = document.querySelectorAll('.mdl-card');
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    animateCard(entry.target);
+                    anime({
+                        targets: entry.target,
+                        translateY: [20, 0],
+                        opacity: [0, 1],
+                        easing: 'easeInOutQuad',
+                        duration: 800,
+                        delay: anime.stagger(150),
+                    });
+
                     observer.unobserve(entry.target);
                 }
             });
         });
 
-        cards.forEach((card) => {
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    }
+
+    // Function for complex animations
+    function complexAnimations() {
+        const cards = document.querySelectorAll('.mdl-card');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    anime({
+                        targets: entry.target,
+                        translateY: [-20, 0],
+                        scale: [1, 1],
+                        rotate: [0, 0],
+                        opacity: [0, 1],
+                        easing: 'easeInOutQuad',
+                        duration: 800,
+                        delay: anime.stagger(150),
+                    });
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        cards.forEach(card => {
             observer.observe(card);
         });
     }
@@ -133,6 +155,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         await fetchPublications();
         updateNightMode();
         fadeInCards();
+        complexAnimations();
         animateElements();
     } catch (error) {
         console.error('Error during initialization:', error);

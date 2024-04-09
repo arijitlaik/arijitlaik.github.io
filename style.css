@@ -530,3 +530,61 @@ body.night-theme,
 
 
 
+/* Button micro interaction */
+.mdl-button {
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.mdl-button:hover {
+  transform: scale(1.05);
+  color: #757575;
+}
+
+/* Icon micro interaction */
+.mdl-button .mdl-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.mdl-button:hover .mdl-icon {
+  transform: scale(1.2);
+}
+
+/* Night theme variant */
+body.night-theme .mdl-button {
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+body.night-theme .mdl-button:hover {
+  transform: scale(1.05);
+  color: #bdbdbd;
+}
+
+body.night-theme .mdl-button .mdl-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+body.night-theme .mdl-button:hover .mdl-icon {
+  transform: scale(1.2);
+}
+.mdl-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.mdl-card::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    background: transparent;
+    box-shadow: 0 0 0 2px #000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.mdl-card.animate::before {
+    opacity: 1;
+    transform: scale(1);
+}
