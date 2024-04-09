@@ -250,6 +250,14 @@ h3 {
   }
 }
 
+@media (max-width: 479px){
+.mdl-grid {
+  padding: 1px;
+}
+
+}
+
+
 .hero-content {
   padding: 0 20px;
 }
@@ -519,3 +527,6 @@ body.night-theme,
   font-size: 0.9rem;
   font-style: italic;
 }
+
+
+
