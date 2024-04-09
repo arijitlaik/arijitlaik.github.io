@@ -49,6 +49,8 @@ span,
 
 
 
+
+
 .mdl-layout--fixed-drawer.is-upgraded:not(.is-small-screen) > .mdl-layout__header {
   margin-left: 120px;
   width: calc(100% - 120px);
@@ -88,7 +90,7 @@ span,
   box-sizing: border-box;
   border: 1px solid #ddd;
 
-  border-radius: 8px;
+  border-radius: 16px;
   transition: background-color 0.3s ease, transform 0.3s ease-out;
   transform: translateY(0);
 }
@@ -99,13 +101,14 @@ span,
 }
 
 .mdl-card__title {
-  font-weight: 700;
 
-  padding: 16px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
+.mdl-card__title .material-icons{
+  margin-right: 1rem;
+}
 .mdl-card__supporting-text {
   padding: 16px;
   line-height: 1.6;
@@ -120,7 +123,8 @@ span,
   text-decoration: none;
 }
 
-.mdl-mini-footer {
+.mdl-mini-footer{
+  
   padding: 10px;
 }
 
@@ -134,7 +138,7 @@ span,
 
 h2,
 h3 {
-  font-weight: 600;
+  font-weight: bolder;
   margin-bottom: 20px;
 }
 
@@ -165,7 +169,6 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px 0;
 }
 
 .hero-content {
@@ -460,4 +463,68 @@ body.night-theme,
 
 .event-date.night-theme {
   color: #777;
+}
+.mainpage.night-theme {
+  background-color: #424242;
+}
+
+.mdl-layout__content.night-theme {
+  background-color: #8a8989;
+}
+
+.mdl-card.night-theme {
+  background-color: #616161;
+  border-color: #757575;
+}
+.mdl-card__title.night-theme {
+  background-color: #757575;
+  color: #e0e0e0;
+}
+
+.mdl-card__supporting-text.night-theme {
+  color: #e0e0e0;
+}
+
+.mdl-layout__header.night-theme {
+  background-color: #757575;
+  color: #e0e0e0;
+}
+
+.mdl-mini-footer.night-theme {
+  background-color: #757575;
+  color: #e0e0e0;
+}
+
+.mdl-mini-footer a.night-theme {
+  color: #e0e0e0;
+}
+
+/* Additional styles for the "Made with" section */
+.made-with-text {
+  text-align: center;
+  color: #6c757d; /* Secondary text color */
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.heart-icon {
+  color: red;
+  display: inline-block;
+  transform: scale(1.2); /* Increase the size of the heart icon */
+  margin-right: 0.2rem;
+}
+
+.mdl-link {
+  color: #007bff; /* Primary color */
+  text-decoration: none;
+}
+
+.mdl-link:hover {
+  text-decoration: underline;
+}
+
+.expand-on-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-style: italic;
 }

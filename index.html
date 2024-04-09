@@ -10,7 +10,7 @@
 
     <!-- Material Design Lite (MDL) Stylesheet -->
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-amber.min.css" />
-    <!-- Josefin Sans Font -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap" rel="stylesheet">
@@ -65,12 +65,13 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row ">
-                <span class="mdl-navigation__link">Arijit Laik</span>
+                <span class="mdl-layout-title">Arijit Laik</span>
 
                 <div class="mdl-layout-spacer"></div>
-                
+
                 <nav class="mdl-navigation mdl-layout--large-screen-only">
-                    <button id="theme-switch" class="mdl-button mdl-js-button mdl-button--icon mdl-button--fab mdl-js-ripple-effect">
+                    <button id="theme-switch"
+                        class="mdl-button mdl-js-button mdl-button--icon mdl-button--fab mdl-js-ripple-effect">
                         <i class="material-icons light-icon">dark_mode</i>
                         <i class="material-icons dark-icon" style="display: none;">light_mode</i>
                     </button>
@@ -84,47 +85,53 @@
             </div>
         </header>
         <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title"></span>
+            <!-- <span class="mdl-layout-title">Arijit Laik</span> -->
             <nav class="mdl-navigation">
 
-                
+
                 <!-- Navigation items -->
-                <a class="mdl-navigation__link" href="#about" onclick="navigateTo('#about')" ontouchstart="navigateTo('#about')">
+                <a class="mdl-navigation__link" href="#about" onclick="navigateTo('#about')"
+                    ontouchstart="navigateTo('#about')">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">info</i>
                     </button>
                     <div class="mdl-typography">About</div>
                 </a>
 
-                <a class="mdl-navigation__link" href="#experience" onclick="navigateTo('#experience')" ontouchstart="navigateTo('#experience')">
+                <a class="mdl-navigation__link" href="#experience" onclick="navigateTo('#experience')"
+                    ontouchstart="navigateTo('#experience')">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">work</i>
                     </button>
                     <div class="mdl-typography">Experience</div>
                 </a>
 
-                <a class="mdl-navigation__link" href="#skills" onclick="navigateTo('#skills')" ontouchstart="navigateTo('#skills')">
+                <a class="mdl-navigation__link" href="#skills" onclick="navigateTo('#skills')"
+                    ontouchstart="navigateTo('#skills')">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">build</i>
                     </button>
                     <div class="mdl-typography">Skills</div>
                 </a>
 
-                <a class="mdl-navigation__link" href="#education" onclick="navigateTo('#education')" ontouchstart="navigateTo('#education')">
+                <a class="mdl-navigation__link" href="#education" onclick="navigateTo('#education')"
+                    ontouchstart="navigateTo('#education')">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">school</i>
                     </button>
                     <div class="mdl-typography">Education</div>
                 </a>
 
-                <a class="mdl-navigation__link" href="#publications" onclick="navigateTo('#publications')" ontouchstart="navigateTo('#publications')">
+                <a class="mdl-navigation__link" href="#publications" onclick="navigateTo('#publications')"
+                    ontouchstart="navigateTo('#publications')">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">library_books</i>
                     </button>
                     <div class="mdl-typography">Publication</div>
                 </a>
 
-                <a class="mdl-navigation__link" href="#voluntary-work" onclick="navigateTo('#voluntary-work')" ontouchstart="navigateTo('#voluntary-work')">
+                <a class="mdl-navigation__link" href="#voluntary-work" onclick="navigateTo('#voluntary-work')"
+                    ontouchstart="navigateTo('#voluntary-work')">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
                         <i class="material-icons">people</i>
                     </button>
@@ -143,32 +150,33 @@
                     <div class="mdl-grid " id="about">
                         <div class="mdl-cell mdl-cell--12-col">
                             <!-- Hero Section -->
-                            <section class="hero-section">
-                                <div class="hero-image">
-                                    <img src="banner-image.png" alt="Headshot of Arijit Laik">
+                            <section class="hero-section mdl-grid">
+                                <div
+                                    class="hero-image mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                                    <img src="banner-image.png" alt="Headshot of Arijit Laik" class="hero-image__img">
                                 </div>
-                                <div class="hero-content ">
+                                <div
+                                    class="hero-content mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
                                     <h1 class="hero-title">Arijit Laik</h1>
                                     <h2 class="hero-subtitle">Versatile Computational Geoscientist | Modeller</h2>
-                                    <p class="hero-description">As a Geoscientist, my background spans into numerical
-                                        and data
-                                        <strong>modeling, simulation, analysis</strong>, and geospatial applications.
-                                        Proficient and versatile in programming and communication, I derive joy from
-                                        turning complex data into actionable intelligence with <strong>enthusiasm,
-                                            precision, and dedication.</strong>
-                                    </p>
-
-                                    <p class="hero-description">I am currently a <strong>Ph.D. Candidate</strong> at
-                                        Vrije Universiteit Amsterdam, where I am investigating the dynamics of
-                                        subduction and collision zones using numerical simulations. I am also a
-                                        <strong>freelance consultant</strong> for artists and performance makers,
-                                        providing creative and science consultancy.
+                                    <p class="hero-description">As a <strong>Geoscientist</strong>, my background spans
+                                        into numerical
+                                        and data modeling, simulation, analysis, and geospatial applications. Proficient
+                                        and versatile in programming and communication, I derive joy from turning
+                                        complex data into actionable intelligence with enthusiasm, precision, and
+                                        dedication.</p>
+                                    <p class="hero-description">I am currently a <strong>Ph.D. Candidate at Vrije
+                                            Universiteit
+                                            Amsterdam</strong>, where I am investigating the dynamics of subduction and
+                                        collision
+                                        zones using numerical simulations. I am also a <strong>freelance consultant for
+                                            artists
+                                            and performance makers</strong>, providing creative and science consultancy.
                                     </p>
                                     <div class="hero-cta-group">
                                         <a href="Arijit_Laik_CV_IND_DATA-V3.pdf" download
                                             class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  hero-cta">Download
                                             My CV</a>
-                                        <!-- <a href="#scroll_target" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored hero-cta">Scroll Down</a> -->
                                     </div>
                                     <div class="hero-socials">
                                         <a class="mdl-button mdl-js-button mdl-button--icon"
@@ -181,10 +189,10 @@
                                         </a>
                                     </div>
                                 </div>
-                            </section>
 
+                            </section>
                         </div>
-                        <div class="mdl-card mdl-cell mdl-cell--12-col">
+                        <!-- <div class="mdl-card mdl-cell mdl-cell--12-col">
                             <div class="mdl-card__title">
                                 <i class="material-icons">assignment</i> Proficiencies
                             </div>
@@ -221,10 +229,62 @@
                                     </li>
                                 </ul>
                             </div>
+                        </div> -->
+
+                        <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-phone">
+                            <div class="mdl-card mdl-shadow--2dp">
+                                <div class="mdl-card__title">
+                                    <i class="material-icons mdl-list__item-avatar">analytics</i>
+                                    <h2 class="mdl-card__title-text">Proficient Data Analysis</h2>
+                                </div>
+                                <div class="mdl-card__supporting-text">
+                                    Proficient in translating complex models and datasets into
+                                    deliverable insights and compelling visualizations.
+                                </div>
+                            </div>
                         </div>
+                        <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-phone">
+                            <div class="mdl-card mdl-shadow--2dp">
+                                <div class="mdl-card__title">
+                                    <i class="material-icons mdl-list__item-avatar">explore</i>
+                                    <h2 class="mdl-card__title-text">Climate Change Awareness</h2>
+                                </div>
+                                <div class="mdl-card__supporting-text">
+                                    Dedicated to addressing challenges in data-driven
+                                    decision-making, climate change, energy transition, and
+                                    sustainability.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-phone">
+                            <div class="mdl-card mdl-shadow--2dp">
+                                <div class="mdl-card__title">
+                                    <i class="material-icons mdl-list__item-avatar">group</i>
+                                    <h2 class="mdl-card__title-text">Synergistic Problem Solving</h2>
+                                </div>
+                                <div class="mdl-card__supporting-text">
+                                    Experienced in leveraging diverse approaches for effective and
+                                    collaborative problem-solving and decision support.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-phone">
+                            <div class="mdl-card mdl-shadow--2dp">
+                                <div class="mdl-card__title">
+                                    <i class="material-icons mdl-list__item-avatar">engineering</i>
+                                    <h2 class="mdl-card__title-text">Technical Acumen</h2>
+                                </div>
+                                <div class="mdl-card__supporting-text">
+                                    Eager to apply technical acumen and dedication to contribute
+                                    to impactful data-driven solutions.
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
 
-                    <section class="content-section" id="experience">
+                    <!-- <section class="content-section" id="experience">
                         <div class="mdl-grid">
                             <div class="mdl-cell mdl-cell--12-col">
                                 <h2><i class="material-icons">work</i> Experience</h2>
@@ -286,6 +346,74 @@
                                 </div>
                             </div>
                         </div>
+                    </section> -->
+                    <section class="content-section experience-section" id="experience">
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <h2 class="section-title"><i class="material-icons">work</i> Experience</h2>
+                            </div>
+
+                            <!-- Experience Card 1 -->
+                            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+                                <div class="mdl-card mdl-shadow--2dp experience-card">
+                                    <div class="mdl-card__title">
+                                        <i class="material-icons card-icon">school</i>
+                                        <h2 class="mdl-card__title-text">Ph.D. Candidate</h2>
+                                    </div>
+                                    <div class="mdl-card__supporting-text">
+                                        <p>Configured, executed, and analyzed numerical simulations of subduction and
+                                            collision on High-Performance Clusters. TA for Computational Modeling with
+                                            Python Coursework in the Earth Sciences BSc Program.</p>
+                                        <p class="event-date">02.09.2018 - 02.02.2024 | Vu Amsterdam</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Experience Card 2 -->
+                            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+                                <div class="mdl-card mdl-shadow--2dp experience-card">
+                                    <div class="mdl-card__title">
+                                        <i class="material-icons card-icon">work</i>
+                                        <h2 class="mdl-card__title-text">Consultant</h2>
+                                    </div>
+                                    <div class="mdl-card__supporting-text">
+                                        <p>Freelance creative and science consultant for artists and performance makers.
+                                        </p>
+                                        <p class="event-date">2020- | Amsterdam</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Experience Card 3 -->
+                            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+                                <div class="mdl-card mdl-shadow--2dp experience-card">
+                                    <div class="mdl-card__title">
+                                        <i class="material-icons card-icon">work</i>
+                                        <h2 class="mdl-card__title-text">Intern</h2>
+                                    </div>
+                                    <div class="mdl-card__supporting-text">
+                                        <p>Collection Processing and Interpretation of Subsurface Data, Reserve
+                                            Estimation.</p>
+                                        <p class="event-date">May - June, 2017 | ECL, Coal India Limited</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Experience Card 4 -->
+                            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+                                <div class="mdl-card mdl-shadow--2dp experience-card">
+                                    <div class="mdl-card__title">
+                                        <i class="material-icons card-icon">work</i>
+                                        <h3 class="mdl-card__title-text">Freelancer</h2>
+                                    </div>
+                                    <div class="mdl-card__supporting-text">
+                                        <p>Web Developer (frontend and backend), hosting, cloud deployments, Graphic
+                                            Designer.</p>
+                                        <p class="event-date">2013 - 2016 | Kolkata, India</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </section>
 
                     <section class="content-section" id="skills">
@@ -310,7 +438,7 @@
                             <!-- Domain Knowledge Card -->
                             <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
                                 <div class="mdl-card">
-                                    <div class="mdl-card__title">
+                                    <div class="mdl-card__title ">
                                         <i class="material-icons">terrain</i> Domain Knowledge
                                     </div>
                                     <div class="mdl-card__supporting-text">
@@ -601,12 +729,47 @@
 
                         </div>
                     </section>
+                    <section class="content-section contact-section" id="contact">
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <div class="mdl-card mdl-shadow--2dp contact-card">
+                                    <div class="mdl-card__title">
+                                        <h2 class="mdl-card__title-text"><i class="material-icons">mail</i> Contact Me
+                                        </h2>
+                                    </div>
+                                    <div class="mdl-card__supporting-text">
+                                        <p>If you're interested in collaborating or discussing opportunities, I'd love
+                                            to hear from you. My extensive experience and voluntary work reflect my
+                                            passion and dedication. Reach out to me via email or connect with me on
+                                            LinkedIn.</p>
+                                    </div>
+                                    <div class="mdl-card__actions mdl-card--border contact-info mdl-grid">
+                                        <div class="mdl-cell mdl-cell--6-col mdl-cell--middle">
+                                            <p>Email: <a href="mailto:laikarijit@gmail.com">laikarijit@gmail.com</a></p>
+                                        </div>
+                                        <div class="mdl-cell mdl-cell--6-col mdl-cell--middle">
+                                            <p>LinkedIn: <a href="https://www.linkedin.com/in/arijitlaik/"
+                                                    target="_blank">Arijit Laik</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
                 </div>
 
-
+                <div class="mdl-grid mdl-card__supporting-text">
+                    <div class="made-with-text" style="text-align: right; width: 100%;">
+                        <p>Made with <span class="heart-icon"><i class="material-icons">favorite</i></span>, <i class="material-icons">local_cafe</i>, <i class="material-icons">local_drink</i>, and <a href="https://getmdl.io/" target="_blank" class="mdl-link">Material Design Lite</a>.</p>
+                    </div>
+                </div>
             </div>
 
         </main>
+
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
                 <div class="mdl-logo mdl-typography--subhead">
@@ -616,7 +779,6 @@
                 <button class="mdl-mini-footer__social-btn"
                     onclick="window.open('https://www.linkedin.com/in/arijitlaik/', '_blank')"><i
                         class="fab fa-linkedin"></i></button>
-                <!-- <button class="mdl-mini-footer__social-btn" onclick="window.open('https://facebook.com/laikarijit', '_blank')"><i class="fab fa-facebook"></i></button> -->
                 <button class="mdl-mini-footer__social-btn"
                     onclick="window.open('https://twitter.com/arijitlaik', '_blank')"><i
                         class="fab fa-twitter"></i></button>
@@ -629,7 +791,6 @@
                 <button class="mdl-mini-footer__social-btn"
                     onclick="window.open('https://neon1174.wordpress.com', '_blank')"><i
                         class="fab fa-wordpress"></i></button>
-                <!-- <button class="mdl-mini-footer__social-btn" onclick="window.open('https://soundcloud.com/arijit-laik', '_blank')"><i class="fab fa-soundcloud"></i></button> -->
                 <button class="mdl-mini-footer__social-btn"
                     onclick="window.open('mailto:laikarijit@gmail.com', '_blank')"><i
                         class="fas fa-envelope"></i></button>
