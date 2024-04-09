@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const card = document.createElement('div');
             card.classList.add('mdl-cell', 'mdl-cell--4-col');
             card.innerHTML = `
-                <div class="mdl-card">
+                <div class="mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title ">
                         ${publication.title}
                     </div>
@@ -105,9 +105,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             easing: 'easeInOutSine',
             duration: 1000,
             delay: anime.stagger(100),
-            begin: function () {
-                card.classList.add('animate');
-            }
+            
         });
     }
 
