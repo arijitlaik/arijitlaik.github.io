@@ -194,20 +194,30 @@ h2, h3 {
 .hero-description {
   margin-bottom: 20px;
 }
-.hero-cta-group {
-  margin: 30px;
 
+.hero-cta-group {
+  margin: 0.1em;
 }
 .hero-cta {
-  margin: 1rem
+  margin-right: 10px;
 }
 .hero-socials {
+  margin: 0.1em;
   margin-top: 20px;
 }
 .hero-socials .mdl-button {
   margin-right: 10px;
 }
+.mainpage {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+@media screen and (min-width: 1400px) {
+  .mainpage {
+    max-width: 1440px;
+  }
+}
 /* BEGIN: Old Book Paper Color Scheme with Enhanced Header and Footer */
 body, .mdl-layout__content, .mdl-layout__drawer, .mainpage {
   background-color: #fdf6e3;
@@ -439,11 +449,37 @@ body.night-theme .mdl-button:hover .mdl-icon {
 .curve-bottom {
   display: block;
   width: 100%;
-}
+  height: 160px;}
 .curve-bottom {
   transform: rotate(180deg);
 }
+.contact-card .curve-bottom  {
+  height: 400px;
+}
 
+/* For tablets */
+@media (max-width: 768px) {
+  .curve-top,
+  .curve-bottom {
+    height: 120px;
+  }
+
+  .contact-card .curve-bottom  {
+    height: 300px;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .curve-top,
+  .curve-bottom {
+    height: 80px;
+  }
+
+  .contact-card .curve-bottom  {
+    height: 200px;
+  }
+}
 /* .curve-top {
 } */
 /* Day theme */
@@ -454,12 +490,12 @@ body.night-theme .mdl-button:hover .mdl-icon {
 
 /* Night theme */
 body.night-theme .curved-section .content-section {
-  background-color: #3b3b3b; /* dark grey-blue color */
+  background-color: #333;
 }
 
 body.night-theme .curve-top path,
 body.night-theme .curve-bottom path {
-  fill: #3b3b3b; /* slightly lighter grey-blue color */
+  fill: #333; /* slightly lighter grey-blue color */
 }
 .curve-top path,
 .curve-bottom path {
