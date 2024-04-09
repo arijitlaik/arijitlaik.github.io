@@ -153,10 +153,10 @@ h2, h3 {
 }
 @media (max-width: 992px) {
   .hero-title {
-      font-size: 6rem;
+      font-size: 4.5rem;
  }
   .hero-subtitle {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
  }
 }
 @media (max-width: 768px) {
@@ -169,10 +169,10 @@ h2, h3 {
       margin-bottom: 30px;
  }
   .hero-title {
-      font-size: 5rem;
+      font-size: 4.5rem;
  }
   .hero-subtitle {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
  }
 }
 @media (max-width: 576px) {
