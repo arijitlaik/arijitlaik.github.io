@@ -439,22 +439,47 @@ body.night-theme .mdl-button:hover .mdl-icon {
 .curve-bottom {
   display: block;
   width: 100%;
-  height: auto;
-  /* transform: scaleY(-1); Flip the curve vertically */
+}
+.curve-bottom {
+  transform: rotate(180deg);
+  bottom: -50%; /* Position the element halfway up from the bottom */
+}
 
+.curve-top {
+  top: -50%; /* Position the element halfway up from the bottom */
 }
 /* Day theme */
-.contact-section {
+.curved-section .content-section  {
   background-color: #f9f2dc; /* slightly darker warm color */
 }
 
 
 /* Night theme */
-body.night-theme .contact-section {
+body.night-theme .curved-section .content-section {
   background-color: #3b3b3b; /* dark grey-blue color */
 }
 
 body.night-theme .curve-top path,
 body.night-theme .curve-bottom path {
   fill: #3b3b3b; /* slightly lighter grey-blue color */
+}
+.curve-top path,
+.curve-bottom path {
+  animation: shift 3s infinite alternate;
+}
+@keyframes shift {
+  0% {
+    d: path('M0,96L48,106.7C96,117,192,139,288,149.3C384,160,480,160,576,149.3C672,139,768,117,864,106.7C960,96,1056,96,1152,106.7C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z');
+  }
+  50% {
+    d: path('M0,128L48,149.3C96,171,192,213,288,213.3C384,213,480,171,576,149.3C672,128,768,128,864,149.3C960,171,1056,213,1152,213.3C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z');
+  }
+  100% {
+    d: path('M0,224L48,192C96,160,192,96,288,85.3C384,75,480,117,576,122.7C672,128,768,96,864,96C960,96,1056,128,1152,133.3C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z');
+  }
+}
+
+.curve-top path,
+.curve-bottom path {
+  animation: shift 5s infinite alternate ease-in-out;
 }
