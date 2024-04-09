@@ -1,77 +1,46 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    
+    const NIGHT_START_HOUR = 18;
+    const NIGHT_END_HOUR = 6;
+    const THEME_SWITCH_ID = 'theme-switch';
+    const PUBLICATIONS_FILE = 'publications.bib';
+    const PUBLICATION_LIST_ID = 'publication-list';
 
-    // Utility function to check if it's currently night based on time
-    function isNightTime() {
+    const isNightTime = () => {
         const now = new Date();
         const hours = now.getHours();
-        return hours < 6 || hours >= 18; // Assume night time if it's before 6 AM or after 6 PM
+        return hours < NIGHT_END_HOUR || hours >= NIGHT_START_HOUR;
     }
 
-    // Function to toggle night mode
-    function toggleNightMode() {
+    const toggleNightMode = (isNight) => {
         const elementsToToggle = document.querySelectorAll('*');
-        const themeSwitch = document.getElementById('theme-switch');
-        const isNight = themeSwitch.classList.contains('night-theme');
+        const themeSwitch = document.getElementById(THEME_SWITCH_ID);
         const lightIcon = themeSwitch.querySelector('.light-icon');
         const darkIcon = themeSwitch.querySelector('.dark-icon');
 
-        // Toggle 'night-theme' class on all elements based on the current mode
-        elementsToToggle.forEach(function (element) {
-            if (isNight) {
-                element.classList.remove('night-theme');
-            } else {
-                element.classList.add('night-theme');
-            }
+        elementsToToggle.forEach(element => {
+            isNight ? element.classList.add('night-theme') : element.classList.remove('night-theme');
         });
 
-        // Toggle 'night-theme' class on the theme switch button and fade between icons
-        if (isNight) {
-            themeSwitch.classList.remove('night-theme');
-            lightIcon.style.display = '';
-            darkIcon.style.display = 'none';
-        } else {
-            themeSwitch.classList.add('night-theme');
-            lightIcon.style.display = 'none';
-            darkIcon.style.display = '';
-        }
+        themeSwitch.classList.toggle('night-theme', isNight);
+        lightIcon.style.display = isNight ? 'none' : '';
+        darkIcon.style.display = isNight ? '' : 'none';
     }
-    
-    // Function to update night mode based on system preference and time
-    function updateNightMode() {
+
+    const updateNightMode = () => {
         const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         const isNight = prefersDarkMode || isNightTime();
         toggleNightMode(isNight);
     }
 
-    // Event listener for the theme switch button
-    const themeSwitch = document.getElementById('theme-switch');
-    if (themeSwitch) {
-        themeSwitch.addEventListener('click', toggleNightMode);
+    const fetchPublications = async () => {
+        const response = await fetch(PUBLICATIONS_FILE);
+        if (!response.ok) throw new Error('Failed to fetch publications');
+        const bibTeX = await response.text();
+        const publications = parseBibTeX(bibTeX);
+        displayPublications(publications);
     }
 
-    // Listen for changes in system theme preference
-    if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateNightMode);
-    }
-    // Function to fetch and display publications from a .bib file
-    async function fetchPublications() {
-        try {
-            const response = await fetch('publications.bib');
-            if (!response.ok) {
-                throw new Error('Failed to fetch publications');
-            }
-            const bibTeX = await response.text();
-            const publications = parseBibTeX(bibTeX);
-            displayPublications(publications);
-        } catch (error) {
-            console.error('Error fetching publications:', error);
-            throw error;
-        }
-    }
-
-    // Function to parse BibTeX data into an array of objects
-    function parseBibTeX(bibTeX) {
+    const parseBibTeX = (bibTeX) => {
         const entries = bibTeX.split('@').filter(entry => entry.trim() !== '');
         return entries.map(entry => {
             const titleMatch = entry.match(/title\s*=\s*{([^}]*)}/);
@@ -86,18 +55,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // Function to display publications in the HTML
-    function displayPublications(publications) {
-        const publicationList = document.getElementById('publication-list');
-
+    const displayPublications = (publications) => {
+        const publicationList = document.getElementById(PUBLICATION_LIST_ID);
         if (!publicationList) {
             console.error('Publication list element not found.');
             return;
         }
 
-        // Clear existing content in the publicationList
         publicationList.innerHTML = '';
-
         publications.forEach(publication => {
             const card = document.createElement('div');
             card.classList.add('mdl-cell', 'mdl-cell--4-col');
@@ -117,83 +82,24 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // Function to animate elements
-    function animateElements() {
-        anime({
-            targets: '.profile-image',
-            translateY: [-20, 0],
-            opacity: [0, 1],
-            easing: 'easeInOutQuad',
-            duration: 800,
-            delay: 300,
-        });
+    
 
-        // Add more animations for other elements as needed
-    }
-
-    // Function to fade in cards
-    function fadeInCards() {
-        
-        const cards = document.querySelectorAll('.mdl-card');
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    anime({
-                        targets: entry.target,
-                        translateY: [20, 0],
-                        opacity: [0, 1],
-                        easing: 'easeInOutQuad',
-                        duration: 800,
-                        delay: anime.stagger(150),
-                    });
-
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-
-        cards.forEach(card => {
-            observer.observe(card);
-        });
-    }
-
-    // Function for complex animations
-    function complexAnimations() {
-        const cards = document.querySelectorAll('.mdl-card');
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    anime({
-                        targets: entry.target,
-                        translateY: [-20, 0],
-                        scale: [1, 1],
-                        rotate: [0, 0],
-                        opacity: [0, 1],
-                        easing: 'easeInOutQuad',
-                        duration: 800,
-                        delay: anime.stagger(150),
-                    });
-
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-
-        cards.forEach(card => {
-            observer.observe(card);
-        });
-    }
-
-    // Fetch publications when the page is loaded and then proceed with other functions
     try {
         await fetchPublications();
         updateNightMode();
-        fadeInCards();
-        complexAnimations();
-        animateElements();
+        // fadeInCards();
+        // complexAnimations();
+        // animateElements();
     } catch (error) {
         console.error('Error during initialization:', error);
+    }
+
+    const themeSwitch = document.getElementById(THEME_SWITCH_ID);
+    if (themeSwitch) {
+        themeSwitch.addEventListener('click', () => toggleNightMode(!themeSwitch.classList.contains('night-theme')));
+    }
+
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateNightMode);
     }
 });
