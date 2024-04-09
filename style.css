@@ -268,58 +268,43 @@ h3 {
   margin-right: 10px;
 }
 
-/* BEGIN: Monochrome Light Color Scheme */
-.mdl-layout__content {
-  background-color: #f5f5f5;
-}
-
-body {
-  background-color: #f5f5f5;
-}
-
-.mdl-layout__drawer {
-  background-color: #f5f5f5;
+/* BEGIN: Old Book Paper Color Scheme with Enhanced Header and Footer */
+body, .mdl-layout__content, .mdl-layout__drawer, .mainpage {
+  background-color: #fdf6e3; /* warm light color */
 }
 
 .mdl-card {
-  background-color: #ffffff;
-  border-color: #e0e0e0;
+  background-color: #fdf6e3; /* warm light color */
+  border-color: #000000; /* black border */
 }
 
 .mdl-card:hover {
-  background-color: #f0f0f0;
+  background-color: #eee8d5; /* slightly darker warm color on hover */
 }
 
 .mdl-card__title {
-  background-color: #e0e0e0;
-  color: #212121;
+  background-color: #fdf6e3; /* warm light color */
+  color: #000000; /* black text */
 }
 
 .mdl-card__supporting-text {
-  color: #212121;
+  color: #000000; /* black text */
 }
 
 .mdl-layout__header {
-  background-color: #e0e0e0;
-  color: #212121;
+  background-color: #f9f2dc; /* slightly darker warm color for header */
+  color: #000000; /* black text */
 }
 
 .mdl-mini-footer {
-  background-color: #e0e0e0;
-  color: #212121;
+  background-color: #f9f2dc; /* slightly darker warm color for footer */
+  color: #000000; /* black text */
 }
 
 .mdl-mini-footer a {
-  color: #212121;
+  color: #000000; /* black text */
 }
-
-
-.mainpage {
-  background-color: #f5f5f5;
-}
-
-/* END: Monochrome Light Color Scheme */
-/* END: Minimal Color Palette */
+/* END: Old Book Paper Color Scheme with Enhanced Header and Footer */
 .mdl-layout__header {
   padding: 1px;
 }
