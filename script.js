@@ -70,14 +70,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         publicationList.innerHTML = '';
         publications.forEach(publication => {
             const card = document.createElement('div');
-            card.classList.add('mdl-cell', 'mdl-cell--4-col');
-            console.log(publication);
+            card.classList.add('mdl-cell', 'mdl-cell--6-col');
             card.innerHTML = `
         <div class="mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title ">
                 ${publication.title}
             </div>
-            <div class="mdl-card__supporting-text">
+            <div class="mdl-card__supporting-text mdl-card--expand">
                 <p>${publication.author}</p>
                 <p class="event-date">${publication.year}</p>
             </div>
@@ -116,7 +115,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         await fetchPublications();
         updateNightMode();
         fadeInCards();
-        animateElements();
     } catch (error) {
         console.error('Error during initialization:', error);
     }
