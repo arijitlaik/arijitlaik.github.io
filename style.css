@@ -648,7 +648,7 @@ body.night-theme .curve-top path,
 body.night-theme .curve-bottom path {
   fill: #333;
   /* slightly lighter grey-blue color */
-  stroke: rgb(254, 255, 237);
+  /* stroke: rgb(254, 255, 237); */
   /* black stroke */
 
 }
@@ -656,7 +656,7 @@ body.night-theme .curve-bottom path {
 .curve-top path,
 .curve-bottom path {
   animation: shift 10s ease-in-out infinite alternate;
-  stroke: rgb(255, 232, 132);
+  /* stroke: rgb(255, 232, 132); */
 
 }
 .mdl-card {
