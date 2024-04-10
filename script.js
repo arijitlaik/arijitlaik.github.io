@@ -83,66 +83,40 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Function to animate elements
-    function animateElements() {
-        anime.timeline({
-            targets: '.hero-image',
-            easing: 'easeInOutSine',
-            duration: 1000,
-        })
-            .add({
-                translateY: [-20, 0],
-                opacity: [0, 1],
-                delay: anime.stagger(100),
-            });
-    }
-
-
-    function animateCard(card) {
-        anime({
-            targets: card,
-            translateY: [20, 0],
-            opacity: [0, 1],
-            easing: 'easeInOutSine',
-            duration: 1000,
-            delay: anime.stagger(100),
-            
-        });
-    }
-
-    // Function to fade in cards
     function fadeInCards() {
         const cards = document.querySelectorAll('.mdl-card');
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    animateCard(entry.target);
+                    entry.target.classList.add('visible');
                     observer.unobserve(entry.target);
                 }
             });
         });
-
+    
         cards.forEach((card) => {
             observer.observe(card);
         });
     }
 
 
+
     try {
-        await fetchPublications();
-        updateNightMode();
-        fadeInCards();
-        animateElements();
-    } catch (error) {
-        console.error('Error during initialization:', error);
-    }
+    await fetchPublications();
+    updateNightMode();
+    fadeInCards();
+    animateElements();
+} catch (error) {
+    console.error('Error during initialization:', error);
+}
 
-    const themeSwitch = document.getElementById(THEME_SWITCH_ID);
-    if (themeSwitch) {
-        themeSwitch.addEventListener('click', () => toggleNightMode(!themeSwitch.classList.contains('night-theme')));
-    }
+const themeSwitch = document.getElementById(THEME_SWITCH_ID);
+if (themeSwitch) {
+    themeSwitch.addEventListener('click', () => toggleNightMode(!themeSwitch.classList.contains('night-theme')));
+}
 
-    if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateNightMode);
-    }
-    
+if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateNightMode);
+}
+
 });
