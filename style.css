@@ -596,10 +596,6 @@ body.night-theme .mdl-button:hover .mdl-icon {
   transform: rotate(180deg);
 }
 
-.contact-card .curve-bottom {
-  height: 400px;
-}
-
 /* For tablets */
 @media (max-width: 768px) {
 
@@ -608,9 +604,6 @@ body.night-theme .mdl-button:hover .mdl-icon {
     height: 120px;
   }
 
-  .contact-card .curve-bottom {
-    height: 300px;
-  }
 }
 
 /* For mobile phones */
@@ -621,9 +614,7 @@ body.night-theme .mdl-button:hover .mdl-icon {
     height: 80px;
   }
 
-  .contact-card .curve-bottom {
-    height: 200px;
-  }
+
 }
 
 /* .curve-top {
