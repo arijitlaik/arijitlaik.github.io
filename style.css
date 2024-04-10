@@ -19,7 +19,13 @@ span,
 
 .mdl-ripple { background: #000; opacity: 0.001; }
 
-
+body {
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0;
+  padding: 0;
+}
 
 .mdl-layout__drawer {
   border-right: 0;
