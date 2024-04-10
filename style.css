@@ -77,13 +77,25 @@ span,
   width: 120px;
 }
 
-.mdl-card {
-  width: 100%;
-  border-radius: 16px;
-  transition: background-color 0.3s ease, transform 0.3s ease-out;
-  transform: translateY(0);
-}
 
+
+.mdl-card {
+    position: relative;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: stretch;
+    width: 100%;
+    border-radius: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease-out;
+    transform: translateY(0);
+    height: 100%;
+    
+}
+.mdl-card__actions {
+  position: absolute;
+  bottom: 0;
+}
 .mdl-card:hover {
   transform: translateY(-4px);
 }
@@ -98,8 +110,9 @@ span,
 }
 
 .mdl-card__supporting-text {
-  padding: 16px;
   line-height: 1.6;
+  height: auto;
+
 }
 
 .mdl-layout__header {
@@ -125,7 +138,6 @@ span,
 h2,
 h3 {
   font-weight: bolder;
-  margin-bottom: 20px;
 }
 
 .mdl-card__supporting-text ul.itemlist li {
@@ -155,7 +167,7 @@ h3 {
 
 .event-date {
   font-style: italic;
-  margin-top: 5px;
+  padding-bottom: 3rem;
 }
 
 .hero-section {
@@ -681,28 +693,23 @@ body.night-theme .curve-bottom path {
 
 
 
-.curve-top,
+/* .curve-top,
 .curve-bottom {
   stroke-dasharray: 1500;
-  /* total length of the path */
   stroke-dashoffset: 1500;
-  /* initial offset is the same as the total length */
   animation: draw 15s ease-in-out infinite alternate;
-  /* semi-transparent black stroke */
   stroke-width: 2px;
 }
 
 @keyframes draw {
   from {
     stroke-dashoffset: 1500;
-    /* start from the total length of the path */
   }
 
   to {
     stroke-dashoffset: -1500;
-    /* end with an offset of 0 */
   }
-}
+} */
 
 .custom-button {
   /* subtle white border */
