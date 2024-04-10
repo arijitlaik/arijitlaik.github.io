@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const NIGHT_START_HOUR = 18;
     const NIGHT_END_HOUR = 6;
     const THEME_SWITCH_ID = 'theme-switch';
-    const PUBLICATIONS_FILE = 'publications.bib';
+    const PUBLICATIONS_FILE = 'publications.bib_doi.bib';
     const PUBLICATION_LIST_ID = 'publication-list';
 
     const isNightTime = () => {
@@ -37,24 +37,29 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!response.ok) throw new Error('Failed to fetch publications');
         const bibTeX = await response.text();
         const publications = parseBibTeX(bibTeX);
+    
+        // Sort publications by year
+        publications.sort((a, b) => b.year - a.year);
+    
         displayPublications(publications);
     }
 
     const parseBibTeX = (bibTeX) => {
-        const entries = bibTeX.split('@').filter(entry => entry.trim() !== '');
-        return entries.map(entry => {
-            const titleMatch = entry.match(/title\s*=\s*{([^}]*)}/);
-            const authorMatch = entry.match(/author\s*=\s*{([^}]*)}/);
-            const yearMatch = entry.match(/year\s*=\s*{([^}]*)}/);
+    const entries = bibTeX.split('@').filter(entry => entry.trim() !== '');
+    return entries.map(entry => {
+        const titleMatch = entry.match(/(^|\s)title\s*=\s*{([^}]*)}/);
+        const authorMatch = entry.match(/author\s*=\s*{([^}]*)}/);
+        const yearMatch = entry.match(/year\s*=\s*{([^}]*)}/);
+        const doiMatch = entry.match(/doi\s*=\s*{([^}]*)}/);
 
-            return {
-                title: titleMatch ? titleMatch[1] : '',
-                author: authorMatch ? authorMatch[1] : '',
-                year: yearMatch ? yearMatch[1] : '',
-            };
-        });
-    }
-
+        return {
+            title: titleMatch ? titleMatch[2] : '',
+            author: authorMatch ? authorMatch[1] : '',
+            year: yearMatch ? yearMatch[1] : '',
+            doi: doiMatch ? doiMatch[1] : '',
+        };
+    });
+}
     const displayPublications = (publications) => {
         const publicationList = document.getElementById(PUBLICATION_LIST_ID);
         if (!publicationList) {
@@ -66,17 +71,23 @@ document.addEventListener('DOMContentLoaded', async () => {
         publications.forEach(publication => {
             const card = document.createElement('div');
             card.classList.add('mdl-cell', 'mdl-cell--4-col');
+            console.log(publication);
             card.innerHTML = `
-                <div class="mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title ">
-                        ${publication.title}
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <p>${publication.author}</p>
-                        <p class="event-date">${publication.year}</p>
-                    </div>
-                </div>
-            `;
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title ">
+                ${publication.title}
+            </div>
+            <div class="mdl-card__supporting-text">
+                <p>${publication.author}</p>
+                <p class="event-date">${publication.year}</p>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="https://doi.org/${publication.doi}" target="_blank">
+    <i class="fas fa-external-link-alt"></i> DOI
+</a>
+            </div>
+        </div>
+    `;
 
             publicationList.appendChild(card);
         });
@@ -93,7 +104,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             });
         });
-    
+
         cards.forEach((card) => {
             observer.observe(card);
         });
@@ -102,21 +113,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
     try {
-    await fetchPublications();
-    updateNightMode();
-    fadeInCards();
-    animateElements();
-} catch (error) {
-    console.error('Error during initialization:', error);
-}
+        await fetchPublications();
+        updateNightMode();
+        fadeInCards();
+        animateElements();
+    } catch (error) {
+        console.error('Error during initialization:', error);
+    }
 
-const themeSwitch = document.getElementById(THEME_SWITCH_ID);
-if (themeSwitch) {
-    themeSwitch.addEventListener('click', () => toggleNightMode(!themeSwitch.classList.contains('night-theme')));
-}
+    const themeSwitch = document.getElementById(THEME_SWITCH_ID);
+    if (themeSwitch) {
+        themeSwitch.addEventListener('click', () => toggleNightMode(!themeSwitch.classList.contains('night-theme')));
+    }
 
-if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateNightMode);
-}
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateNightMode);
+    }
 
 });
