@@ -197,12 +197,7 @@ h3 {
   /* reduced intensity sepia filter for a more subtle effect */
 }
 
-.hero-image img.night-theme {
-  max-width: 100%;
-  height: auto;
-  filter: none;
-  /* remove sepia filter for night theme */
-}
+
 
 @media (max-width: 1200px) {
   .hero-title {
@@ -349,100 +344,110 @@ body,
 }
 
 /* END: Old Book Paper Color Scheme with Enhanced Header and Footer */
-.mainpage.night-theme {
+
+body.night-theme  .hero-image img{
+  max-width: 100%;
+  height: auto;
+  filter: none;
+  /* remove sepia filter for night theme */
+}
+
+body.night-theme  .mainpage {
   background-color: #424242;
 }
 
-.mdl-layout__content.night-theme {
+body.night-theme .mdl-layout__content {
   background-color: #8a8989;
 }
 
-.mdl-mini-footer--social-btn.night-theme,
-.mdl-mini-footer__social-btn.night-theme {
+body.night-theme .mdl-mini-footer--social-btn,
+body.night-theme .mdl-mini-footer__social-btn {
   background-color: inherit;
   font-weight: bolder;
   font-size: x-large;
 }
 
 body.night-theme,
-.mdl-layout.night-theme {
+.mdl-layout {
   background-color: #2c2c2c;
 }
 
-.mdl-layout__drawer.night-theme {
+body.night-theme .mdl-layout__drawer {
   background-color: #333;
 }
 
-.mdl-layout__drawer.night-theme .mdl-navigation .mdl-navigation__link:hover {
+body.night-theme .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
   background-color: #555;
 }
 
-.mdl-card.night-theme {
+body.night-theme  .mdl-card {
   background-color: #333;
 }
 
-.mdl-card.night-theme:hover {
+body.night-theme  .mdl-card:hover {
   background-color: #555;
 }
 
-.mdl-card__title.night-theme {
+body.night-theme .mdl-card__title {
   background-color: #555;
+  color:#ffffff
 }
 
-.mdl-card__supporting-text.night-theme {
+body.night-theme .mdl-card__supporting-text {
   color: #555;
 }
 
-.mdl-layout__header.night-theme {
+body.night-theme .mdl-layout__header {
   background-color: #555;
 }
 
-.mdl-mini-footer.night-theme {
+body.night-theme .mdl-mini-footer {
   background-color: #555;
 }
 
-.page-content.night-theme {
+body.night-theme  .page-content {
   background-color: #333;
   color: #bbb;
 }
 
-.night-theme {
+body.night-theme  .material-icons{
   color: #ffffff !important;
 }
 
-.event-date.night-theme {
-  color: #777;
+body.night-theme .event-date {
+  color: #dddcdc;
 }
 
 .mdl-list__item {
   font-size: 16px !important;
 }
 
-.mainpage.night-theme {
+body.night-theme  .mainpage {
   background-color: #424242;
 }
 
-.mdl-layout__content.night-theme {
+body.night-theme .mdl-layout__content{
   background-color: #8a8989;
 }
 
-.mdl-mini-footer--social-btn.night-theme,
-.mdl-mini-footer__social-btn.night-theme {
+body.night-theme .mdl-mini-footer--social-btn,
+body.night-theme .mdl-mini-footer__social-btn {
   background-color: inherit;
   font-weight: bolder;
   font-size: x-large;
+  color: #ffffff;
 }
 
 body.night-theme,
-.mdl-layout.night-theme {
+.mdl-layout {
   background-color: #2c2c2c;
 }
 
-.mdl-layout__drawer.night-theme {
+body.night-theme .mdl-layout__drawer {
   background-color: #333;
 }
 
-.mdl-layout__drawer.night-theme .mdl-navigation .mdl-navigation__link:hover {
+body.night-theme .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
   background-color: #555;
 }
 
@@ -450,69 +455,98 @@ body.night-theme,
   background-color: #555;
 }
 
-.mdl-card__title.night-theme {
-  background-color: #555;
-}
 
-.mdl-card__supporting-text.night-theme {
+
+body.night-theme .mdl-card__supporting-text {
   color: #555;
 }
 
-.mdl-layout__header.night-theme {
+body.night-theme  .mdl-layout__header {
   background-color: #555;
 }
 
-.mdl-mini-footer.night-theme {
+
+body.night-theme .mdl-mini-footer {
   background-color: #555;
 }
 
-.page-content.night-theme {
+
+body.night-theme .page-content {
   background-color: #333;
   color: #bbb;
 }
 
-.night-theme {
-  color: #ffffff !important;
-}
 
-.event-date.night-theme {
+
+
+body.night-theme .event-date {
   color: #777;
 }
 
-.mainpage.night-theme {
+
+body.night-theme .mainpage {
   background-color: #424242;
 }
 
-.mdl-layout__content.night-theme {
+
+body.night-theme .mdl-layout__content {
   background-color: #8a8989;
 }
 
-.mdl-card.night-theme {
+
+body.night-theme .mdl-card{
   background-color: #616161;
   border-color: #757575;
 }
 
-.mdl-card__title.night-theme {
+
+body.night-theme .mdl-card__supporting-text {
+  color: #e0e0e0;
+}
+
+
+body.night-theme .mdl-layout__header{
   background-color: #757575;
   color: #e0e0e0;
 }
 
-.mdl-card__supporting-text.night-theme {
-  color: #e0e0e0;
-}
 
-.mdl-layout__header.night-theme {
+body.night-theme .mdl-mini-footer {
   background-color: #757575;
   color: #e0e0e0;
 }
 
-.mdl-mini-footer.night-theme {
-  background-color: #757575;
+
+body.night-theme .mdl-mini-footer a{
   color: #e0e0e0;
 }
+body.night-theme .mdl-button {
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
 
-.mdl-mini-footer a.night-theme {
-  color: #e0e0e0;
+body.night-theme .mdl-button:hover {
+  transform: scale(1.05);
+  color: #bdbdbd;
+}
+
+body.night-theme .mdl-button .mdl-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+body.night-theme .mdl-button:hover .mdl-icon {
+  transform: scale(1.2);
+}
+body.night-theme .curved-section .content-section {
+  background-color: #333;
+}
+
+body.night-theme .curve-top path,
+body.night-theme .curve-bottom path {
+  fill: #333;
+  /* slightly lighter grey-blue color */
+  /* stroke: rgb(254, 255, 237); */
+  /* black stroke */
+
 }
 
 /* Additional styles for the "Made with" section */
@@ -565,23 +599,7 @@ body.night-theme,
   transform: scale(1.2);
 }
 
-/* Night theme variant */
-body.night-theme .mdl-button {
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-}
 
-body.night-theme .mdl-button:hover {
-  transform: scale(1.05);
-  color: #bdbdbd;
-}
-
-body.night-theme .mdl-button .mdl-icon {
-  transition: transform 0.3s ease-in-out;
-}
-
-body.night-theme .mdl-button:hover .mdl-icon {
-  transform: scale(1.2);
-}
 
 .curved-section {
   position: relative;
@@ -634,19 +652,7 @@ body.night-theme .mdl-button:hover .mdl-icon {
 }
 
 
-/* Night theme */
-body.night-theme .curved-section .content-section {
-  background-color: #333;
-}
 
-body.night-theme .curve-top path,
-body.night-theme .curve-bottom path {
-  fill: #333;
-  /* slightly lighter grey-blue color */
-  /* stroke: rgb(254, 255, 237); */
-  /* black stroke */
-
-}
 
 .curve-top path,
 .curve-bottom path {
