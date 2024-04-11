@@ -1,3 +1,16 @@
+const THEME_SWITCH_ID = 'theme-switch';
+const NIGHT_START_HOUR = 18;
+const NIGHT_END_HOUR = 6;
+
+const isNightTime = () => {
+    const now = new Date();
+    const hours = now.getHours();
+    return hours < NIGHT_END_HOUR || hours >= NIGHT_START_HOUR;
+}
+
+const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+const isNight = prefersDarkMode || isNightTime();
+document.body.classList.toggle('night-theme', isNight);
 document.addEventListener('DOMContentLoaded', async () => {
     const NIGHT_START_HOUR = 18;
     const NIGHT_END_HOUR = 6;
@@ -128,18 +141,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
 });
-const THEME_SWITCH_ID = 'theme-switch';
-const NIGHT_START_HOUR = 18;
-const NIGHT_END_HOUR = 6;
 
-const isNightTime = () => {
-    const now = new Date();
-    const hours = now.getHours();
-    return hours < NIGHT_END_HOUR || hours >= NIGHT_START_HOUR;
-}
 
-const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-const isNight = prefersDarkMode || isNightTime();
-document.body.classList.toggle('night-theme', isNight);
-
-// rest of your code...
