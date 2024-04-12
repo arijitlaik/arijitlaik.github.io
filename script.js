@@ -11,18 +11,13 @@ const isNightTime = () => {
 const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 const isNight = prefersDarkMode || isNightTime();
 document.body.classList.toggle('night-theme', isNight);
+
 document.addEventListener('DOMContentLoaded', async () => {
     const NIGHT_START_HOUR = 18;
     const NIGHT_END_HOUR = 6;
     const THEME_SWITCH_ID = 'theme-switch';
     const PUBLICATIONS_FILE = 'publications.bib_doi.bib';
     const PUBLICATION_LIST_ID = 'publication-list';
-
-    const isNightTime = () => {
-        const now = new Date();
-        const hours = now.getHours();
-        return hours < NIGHT_END_HOUR || hours >= NIGHT_START_HOUR;
-    }
 
     const toggleNightMode = (isNight) => {
         const themeSwitch = document.getElementById(THEME_SWITCH_ID);
@@ -60,19 +55,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     const parseBibTeX = (bibTeX) => {
         const entries = bibTeX.split('@').filter(entry => entry.trim() !== '');
         return entries.map(entry => {
-            const titleMatch = entry.match(/(^|\s)title\s*=\s*{([^}]*)}/);
-            const authorMatch = entry.match(/author\s*=\s*{([^}]*)}/);
-            const yearMatch = entry.match(/year\s*=\s*{([^}]*)}/);
-            const doiMatch = entry.match(/doi\s*=\s*{([^}]*)}/);
-
-            return {
-                title: titleMatch ? titleMatch[2] : '',
-                author: authorMatch ? authorMatch[1] : '',
-                year: yearMatch ? yearMatch[1] : '',
-                doi: doiMatch ? doiMatch[1] : '',
+            const typeMatch = entry.match(/@([^{\s]*)/);
+            const fields = entry.match(/\s*([^=\s]*)\s*=\s*{([^}]*)}/g);
+            const entryObj = {
+                type: typeMatch ? typeMatch[1] : '',
             };
+            if (fields) {
+                fields.forEach(field => {
+                    const [key, value] = field.split('=').map(item => item.trim().replace(/^{(.*)}$/, '$1'));
+                    entryObj[key] = value;
+                });
+            }
+            return entryObj;
         });
     }
+
     const displayPublications = (publications) => {
         const publicationList = document.getElementById(PUBLICATION_LIST_ID);
         if (!publicationList) {
@@ -80,27 +77,37 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
-        // publicationList.innerHTML = '';
         let htmlString = '';
         publications.forEach(publication => {
-            htmlString += `
-            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            htmlString += `<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
                 <div class="mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title ">
-                        ${publication.title}
+                        ${publication.title ? `<span>${publication.title}</span>` : ''}
                     </div>
                     <div class="mdl-card__supporting-text mdl-card--expand">
-                        <p>${publication.author}</p>
-                        <p class="event-date">${publication.year}</p>
+                        ${publication.author ? `<p><span>${highlightAuthor(publication.author)}</span></p>` : ''}
+                        ${publication.year ? `<p><span>${publication.year}</span></p>` : ''}
+                        ${publication.journal || publication.booktitle ? `<span>${publication.journal || publication.booktitle},</span>` : ''}
+                        ${publication.volume ? `<span>${publication.volume},</span>` : ''}
+                        ${publication.pages ? `<span>${publication.pages}.</span>` : ''}
+                        ${publication.abstract ? `<p class="abstract"><span>${publication.abstract}</span></p>` : ''}
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="https://doi.org/${publication.doi}" target="_blank">
+                        <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="https://doi.org/${publication.doi || ''}" target="_blank">
                             <i class="fas fa-external-link-alt"></i> DOI
                         </a>
                     </div>
                 </div>
-            </div>
-        `;
+            </div>`;
+
+            function highlightAuthor(author) {
+                const highlightedWords = ['Laik', 'Arijit', 'Laik, A'];
+                let highlightedAuthor = author;
+                highlightedWords.forEach(word => {
+                    highlightedAuthor = highlightedAuthor.replace(new RegExp(word, 'gi'), `<strong class="highlight">${word}</strong>`);
+                });
+                return highlightedAuthor;
+            }
         });
         publicationList.insertAdjacentHTML('beforeend', htmlString);
     }
