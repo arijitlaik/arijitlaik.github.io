@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         let htmlString = '';
         publications.forEach(publication => {
-            htmlString += `<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            htmlString += `<div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
                 <div class="mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title ">
                         ${publication.title ? `<span>${publication.title}</span>` : ''}
