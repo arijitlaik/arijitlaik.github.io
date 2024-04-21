@@ -89,7 +89,27 @@ span,
   transform: translateY(0);
 
 }
+.mdl-card img {
+  border-radius: 16px;
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* This will ensure that the image covers the entire width of the card */
+  filter: blur(1px); /* Add blur effect */
+  transition: filter 0.3s ease; /* Add transition effect */
+}
 
+.mdl-card img:hover {
+  filter: none; /* Remove blur effect on hover */
+}
+.mdl-card__title-text {
+  position: absolute;
+
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better readability */
+  font-size: 1.2em; /* Increase font size for better visibility */
+  text-align: center; /* Center align the text */
+  font-weight: 500; /* Make the text slightly bold */
+}
 .contact-card>.mdl-grid {
   padding: 6rem 0rem;
   justify-content: center;
