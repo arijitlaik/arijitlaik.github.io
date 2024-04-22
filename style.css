@@ -101,7 +101,8 @@ span,
 .mdl-card img:hover {
   filter: none; /* Remove blur effect on hover */
 }
-.mdl-card__title-text {
+
+.democard>.mdl-card__title-text {
   position: absolute;
 
   color: white;
@@ -203,8 +204,56 @@ h3 {
 .hero-title {
   font-size: 8rem;
   font-weight: bold;
+  background: -webkit-linear-gradient(45deg, #424242, #c5c5c4); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+.hero-title {
+  background: -webkit-linear-gradient(45deg, #424242, #c5c5c4);
+  background-size: 200% 200%;
+  -webkit-animation: Gradient 10s ease-in-out infinite;
+  -moz-animation: Gradient 10s ease-in-out infinite;
+  -webkit-background-clip: text;
+
+  animation: Gradient 10s ease-in-out infinite;
 }
 
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
 .hero-subtitle {
   font-size: 2.5rem;
 }
@@ -463,6 +512,7 @@ body.night-theme .mdl-mini-footer__social-btn {
   font-size: x-large;
   color: #ffffff;
 }
+
 
 body.night-theme,
 .mdl-layout {
