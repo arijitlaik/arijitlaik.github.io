@@ -191,11 +191,51 @@ h3 {
 }
 
 .hero-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+    background-size: 200% 200%;
+    animation: Gradients 10s ease-in-out infinite, morph 10s ease-in-out infinite;
+    border-radius: 25px;
+    overflow: hidden; /* To ensure the background follows the border radius */
 }
 
+@keyframes Gradients {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 50px;
+    }
+    25% {
+        border-radius: 100px;
+    }
+    50% {
+        border-radius: 150px;
+    }
+    75% {
+        border-radius: 100px;
+    }
+    100% {
+        border-radius: 50px;
+    }
+}
 .hero-content {
   flex: 1;
   max-width: 60%;
