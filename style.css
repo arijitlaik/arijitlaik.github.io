@@ -94,7 +94,8 @@ span,
   width: 100%;
   height: auto;
   object-fit: cover; /* This will ensure that the image covers the entire width of the card */
-  filter: blur(1px); /* Add blur effect */
+  transition: filter 0.3s ease-in-out; /* Add transition effect */
+  filter: grayscale(100%); /* A
   transition: filter 0.3s ease; /* Add transition effect */
 }
 
@@ -402,7 +403,7 @@ p {
 
 @media screen and (min-width: 1400px) {
   .mainpage {
-    max-width: 1440px;
+    max-width: 1360px;
   }
 }
 
@@ -847,16 +848,15 @@ body.night-theme .mdl-list__item--two-line .mdl-list__item-sub-title {
 }
 
 .mdl-card {
-  opacity: 0.5;
-  transform: scale(0.95);
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  opacity: 0;
+  transform: translateX(100px) scale(0.9);
+  transition: opacity 2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .mdl-card.visible {
   opacity: 1;
-  transform: scale(1);
+  transform: translateX(0) scale(1);
 }
-
 @keyframes shift {
   0% {
     d: path('M0,96L48,106.7C96,117,192,139,288,149.3C384,160,480,160,576,149.3C672,139,768,117,864,106.7C960,96,1056,96,1152,106.7C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z');

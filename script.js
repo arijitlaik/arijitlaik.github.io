@@ -123,7 +123,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         });
 
-        cards.forEach((card) => {
+        cards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.005}s`; // Add transition delay based on index
             observer.observe(card);
         });
     }
