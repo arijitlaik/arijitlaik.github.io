@@ -94,9 +94,8 @@ span,
   width: 100%;
   height: auto;
   object-fit: cover; /* This will ensure that the image covers the entire width of the card */
-  transition: filter 0.3s ease-in-out; /* Add transition effect */
-  filter: grayscale(100%); /* A
-  transition: filter 0.3s ease; /* Add transition effect */
+  filter: grayscale();
+ transition: filter 0.3s ease; /* Add transition effect */
 }
 
 .mdl-card img:hover {
@@ -197,8 +196,9 @@ h3 {
     justify-content: space-between;
     background: linear-gradient(270deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
     background-size: 200% 200%;
-    animation: Gradients 10s ease-in-out infinite, morph 10s ease-in-out infinite;
     border-radius: 25px;
+
+    animation: Gradients 5s ease-in-out infinite, /* morph 1s ease-in-out infinite;
     overflow: hidden; /* To ensure the background follows the border radius */
 }
 
@@ -220,7 +220,7 @@ h3 {
   }
 }
 
-@keyframes morph {
+/* @keyframes morph {
     0% {
         border-radius: 50px;
     }
@@ -235,8 +235,34 @@ h3 {
     }
     100% {
         border-radius: 50px;
-    }
+    } */
+/* } */
+.material-icons {
+  animation: icon-animation 10s infinite ease-in-out;
 }
+@keyframes icon-animation {
+  0% {
+    opacity: 1;
+    text-shadow: none;
+  }
+  25% {
+    opacity: 0.8;
+    text-shadow: 0 0 10px cyan;
+  }
+  50% {
+    opacity: 0.6;
+    text-shadow: 0 0 10px magenta;
+  }
+  75% {
+    opacity: 0.8;
+    text-shadow: 0 0 10px yellow;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: none;
+  }
+}
+
 .hero-content {
   flex: 1;
   max-width: 60%;
@@ -253,14 +279,14 @@ h3 {
 .hero-title {
   background: -webkit-linear-gradient(45deg, #424242, #c5c5c4);
   background-size: 200% 200%;
-  -webkit-animation: Gradient 10s ease-in-out infinite;
-  -moz-animation: Gradient 10s ease-in-out infinite;
+  -webkit-animation: Gradient2 10s ease-in-out infinite;
+  -moz-animation: Gradient2 10s ease-in-out infinite;
   -webkit-background-clip: text;
 
-  animation: Gradient 10s ease-in-out infinite;
+  animation: Gradient2 10s ease-in-out infinite;
 }
 
-@-webkit-keyframes Gradient {
+@-webkit-keyframes Gradient2 {
   0% {
     background-position: 0% 50%
   }
@@ -272,7 +298,7 @@ h3 {
   }
 }
 
-@-moz-keyframes Gradient {
+@-moz-keyframes Gradient2 {
   0% {
     background-position: 0% 50%
   }
@@ -284,7 +310,7 @@ h3 {
   }
 }
 
-@keyframes Gradient {
+@keyframes Gradient2 {
   0% {
     background-position: 0% 50%
   }
@@ -848,15 +874,16 @@ body.night-theme .mdl-list__item--two-line .mdl-list__item-sub-title {
 }
 
 .mdl-card {
-  opacity: 0;
-  transform: translateX(100px) scale(0.9);
-  transition: opacity 2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0.5;
+  transform: scale(0.95);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .mdl-card.visible {
   opacity: 1;
-  transform: translateX(0) scale(1);
+  transform: scale(1);
 }
+
 @keyframes shift {
   0% {
     d: path('M0,96L48,106.7C96,117,192,139,288,149.3C384,160,480,160,576,149.3C672,139,768,117,864,106.7C960,96,1056,96,1152,106.7C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z');
@@ -950,3 +977,4 @@ html {
     outline: 3px solid rgba(255, 255, 255, 0);
   }
 }
+
