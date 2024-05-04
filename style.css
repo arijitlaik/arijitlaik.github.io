@@ -247,15 +247,15 @@ h3 {
   }
   25% {
     opacity: 0.8;
-    text-shadow: 0 0 10px cyan;
+    text-shadow: 0 0 1px cyan;
   }
   50% {
     opacity: 0.6;
-    text-shadow: 0 0 10px magenta;
+    text-shadow: 0 0 1px magenta;
   }
   75% {
     opacity: 0.8;
-    text-shadow: 0 0 10px yellow;
+    text-shadow: 0 0 3px yellow;
   }
   100% {
     opacity: 1;
@@ -283,7 +283,7 @@ h3 {
   -moz-animation: Gradient2 10s ease-in-out infinite;
   -webkit-background-clip: text;
 
-  animation: Gradient2 10s ease-in-out infinite;
+  animation: Gradient2 6s ease-in-out infinite;
 }
 
 @-webkit-keyframes Gradient2 {
