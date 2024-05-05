@@ -274,9 +274,6 @@ h3 {
   background: -webkit-linear-gradient(45deg, #424242, #c5c5c4); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-}
-.hero-title {
   background: -webkit-linear-gradient(45deg, #424242, #c5c5c4);
   background-size: 200% 200%;
   -webkit-animation: Gradient2 10s ease-in-out infinite;

@@ -79,26 +79,27 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         let htmlString = '';
         publications.forEach(publication => {
-            htmlString += `<div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
-                <div class="mdl-card mdl-shadow--2dp">
-                    <div class="mdl-card__title ">
-                        ${publication.title ? `<span>${publication.title}</span>` : ''}
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-card--expand">
-                        ${publication.author ? `<p><span>${highlightAuthor(publication.author)}</span></p>` : ''}
-                        ${publication.year ? `<p><span>${publication.year}</span></p>` : ''}
-                        ${publication.journal || publication.booktitle ? `<span>${publication.journal || publication.booktitle},</span>` : ''}
-                        ${publication.volume ? `<span>${publication.volume},</span>` : ''}
-                        ${publication.pages ? `<span>${publication.pages}.</span>` : ''}
-                        ${publication.abstract ? `<p class="abstract"><span>${publication.abstract}</span></p>` : ''}
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="https://doi.org/${publication.doi || ''}" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> DOI
-                        </a>
-                    </div>
-                </div>
-            </div>`;
+htmlString += `
+  <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
+    <div class="mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        ${publication.title ? `<h2 class="mdl-card__title-text">${publication.title}</h2>` : ''}
+      </div>
+      <div class="mdl-card__supporting-text">
+        ${publication.author ? `<p><strong>Author:</strong> ${highlightAuthor(publication.author)}</p>` : ''}
+        ${publication.year ? `<p><strong>Year:</strong> ${publication.year}</p>` : ''}
+        ${publication.journal || publication.booktitle ? `<p><strong>Publication:</strong> ${publication.journal || publication.booktitle}</p>` : ''}
+        ${publication.volume ? `<p><strong>Volume:</strong> ${publication.volume}</p>` : ''}
+        ${publication.pages ? `<p><strong>Pages:</strong> ${publication.pages}</p>` : ''}
+        ${publication.abstract ? `<p><strong>Abstract:</strong> ${publication.abstract}</p>` : ''}
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://doi.org/${publication.doi || ''}" target="_blank">
+          <i class="material-icons">launch</i> DOI
+        </a>
+      </div>
+    </div>
+  </div>`;
 
             function highlightAuthor(author) {
                 const highlightedWords = ['Laik', 'Arijit', 'Laik, A'];
